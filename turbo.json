@@ -1,0 +1,20 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [
+    "tsconfig.base.json",
+    "pnpm-lock.yaml",
+    ".node-version",
+    "lingui.config.ts"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "env": ["VITE_*", "EXPO_PUBLIC_*", "NODE_ENV"],
+      "outputs": ["build/**", "dist/**", "locales/*/messages.ts"]
+    },
+    "typecheck": { "dependsOn": ["^build"], "outputs": [] },
+    "test": { "dependsOn": ["^build"], "outputs": [] },
+    "dev": { "cache": false, "persistent": true }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "ignoreDependencies": [
+    "@supabase/supabase-js",
+    "@lingui/babel-plugin-lingui-macro",
+    "expo-updates",
+    "expo-system-ui"
+  ],
+  "ignoreBinaries": ["supabase"],
+  "workspaces": {
+    ".": {
+      "entry": ["scripts/*.mjs", "supabase/*.mjs", "lingui.config.ts"]
+    }
+  }
+}

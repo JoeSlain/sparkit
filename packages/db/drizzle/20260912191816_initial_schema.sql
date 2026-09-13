@@ -1,0 +1,22 @@
+CREATE TABLE "profiles" (
+	"id" uuid PRIMARY KEY NOT NULL,
+	"display_name" text DEFAULT 'New user' NOT NULL,
+	"created_at" timestamp with time zone DEFAULT now() NOT NULL,
+	"updated_at" timestamp with time zone DEFAULT now() NOT NULL,
+	CONSTRAINT "profiles_display_name_valid" CHECK (char_length(btrim("profiles"."display_name")) between 1 and 80 and "profiles"."display_name" = btrim("profiles"."display_name"))
+);
+--> statement-breakpoint
+ALTER TABLE "profiles" ENABLE ROW LEVEL SECURITY;--> statement-breakpoint
+CREATE TABLE "tasks" (
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
+	"user_id" uuid NOT NULL,
+	"title" text NOT NULL,
+	"completed" boolean DEFAULT false NOT NULL,
+	"created_at" timestamp with time zone DEFAULT now() NOT NULL,
+	"updated_at" timestamp with time zone DEFAULT now() NOT NULL,
+	CONSTRAINT "tasks_title_valid" CHECK (char_length(btrim("tasks"."title")) between 1 and 160 and "tasks"."title" = btrim("tasks"."title"))
+);
+--> statement-breakpoint
+ALTER TABLE "tasks" ENABLE ROW LEVEL SECURITY;--> statement-breakpoint
+ALTER TABLE "tasks" ADD CONSTRAINT "tasks_user_id_profiles_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."profiles"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+CREATE INDEX "tasks_user_created_idx" ON "tasks" USING btree ("user_id","created_at","id");

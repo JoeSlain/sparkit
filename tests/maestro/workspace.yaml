@@ -1,0 +1,121 @@
+appId: com.agencystarter.app
+name: Real private workspace · native smoke
+---
+# Root seeds a dedicated local account and cleans its tasks before this flow.
+# Supply E2E_EMAIL / E2E_PASSWORD through Maestro -e; never commit credentials.
+# Metro must already be serving this workspace (`stim start` from apps/mobile).
+- launchApp:
+    clearState: true
+    clearKeychain: true
+- openLink: agencystarter://expo-development-client/?url=http%3A%2F%2F127.0.0.1%3A8082
+# Dev Client may show the first-run developer menu over the app; dismiss it.
+- extendedWaitUntil:
+    visible: 'Continue'
+    timeout: 45000
+    optional: true
+- runFlow:
+    when:
+      visible: 'Continue'
+    commands:
+      - tapOn: 'Continue'
+- runFlow:
+    when:
+      visible: 'Close'
+    commands:
+      - tapOn:
+          id: xmark
+- extendedWaitUntil:
+    visible:
+      id: sign-in-button
+    timeout: 20000
+- tapOn:
+    id: locale-en
+- assertVisible:
+    id: sign-in-button
+- tapOn:
+    id: email-input
+- eraseText: 120
+- inputText: ${E2E_EMAIL}
+- tapOn:
+    id: password-input
+- eraseText: 120
+- inputText: ${E2E_PASSWORD}
+- tapOn:
+    id: sign-in-button
+- runFlow:
+    when:
+      visible: 'Save Password?'
+    commands:
+      - tapOn: 'Not Now'
+- extendedWaitUntil:
+    visible: 'Your tasks'
+    timeout: 20000
+- assertVisible:
+    id: tasks-empty
+- tapOn:
+    id: task-input
+- inputText: Native acceptance task
+- tapOn:
+    id: add-task-button
+- assertVisible: Native acceptance task
+- tapOn:
+    id: task-toggle
+- assertVisible: 1 of 1 done
+- scrollUntilVisible:
+    element:
+      id: profile-name-input
+    direction: DOWN
+- tapOn:
+    id: profile-name-input
+- eraseText: 40
+- inputText: Native Tester
+- tapOn:
+    id: save-profile-button
+- assertVisible: Profile saved.
+# Restart uses encrypted persisted session and real server data.
+- stopApp
+- launchApp
+- openLink: agencystarter://expo-development-client/?url=http%3A%2F%2F127.0.0.1%3A8082
+- extendedWaitUntil:
+    visible: 'Continue'
+    timeout: 45000
+    optional: true
+- runFlow:
+    when:
+      visible: 'Continue'
+    commands:
+      - tapOn: 'Continue'
+- runFlow:
+    when:
+      visible: 'Close'
+    commands:
+      - tapOn:
+          id: xmark
+- extendedWaitUntil:
+    visible: 'Native acceptance task'
+    timeout: 20000
+- assertVisible: Native acceptance task
+- assertVisible: 1 of 1 done
+- tapOn:
+    id: locale-fr
+- assertVisible: Vos tâches
+- tapOn:
+    id: task-delete
+- assertVisible:
+    id: tasks-empty
+- scrollUntilVisible:
+    element:
+      id: profile-name-input
+    direction: DOWN
+- assertVisible: Native Tester
+- scrollUntilVisible:
+    element:
+      id: sign-out-button
+    direction: DOWN
+- tapOn:
+    id: sign-out-button
+- assertVisible:
+    id: sign-in-button
+- assertNotVisible: Native acceptance task
+- tapOn:
+    id: locale-en

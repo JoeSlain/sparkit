@@ -1,0 +1,16 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "ignorePatterns": [
+    "**/node_modules/**",
+    "**/ios/**",
+    "**/android/**",
+    "**/locales/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.react-router/**",
+    "**/.expo/**",
+    "pnpm-lock.yaml",
+    ".local/**"
+  ]
+}

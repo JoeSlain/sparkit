@@ -1,0 +1,10 @@
+packages:
+  - apps/*
+  - packages/*
+  - tests/*
+
+onlyBuiltDependencies:
+  - esbuild
+  - '@swc/core'
+  - '@parcel/watcher'
+  - unrs-resolver

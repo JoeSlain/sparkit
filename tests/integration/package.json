@@ -1,0 +1,19 @@
+{
+  "name": "@agency/integration",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:integration": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@agency/supabase": "workspace:*",
+    "@supabase/supabase-js": "2.116.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.15",
+    "typescript": "6.0.3",
+    "vitest": "4.1.0"
+  }
+}

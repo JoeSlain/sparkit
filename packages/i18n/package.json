@@ -1,0 +1,20 @@
+{
+  "name": "@agency/i18n",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "build": "lingui compile --config ../../lingui.config.ts --strict --typescript",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@lingui/core": "6.7.0"
+  },
+  "devDependencies": {
+    "@lingui/cli": "6.7.0",
+    "typescript": "6.0.3"
+  }
+}

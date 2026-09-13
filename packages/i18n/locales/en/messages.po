@@ -1,0 +1,413 @@
+msgid ""
+msgstr ""
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+
+#: apps/mobile/src/dashboard.tsx:115
+msgid "{complete} of {total} done"
+msgstr "{complete} of {total} done"
+
+#: apps/web/app/components/tasks.tsx:201
+msgid "{completed} of {total} completed"
+msgstr "{completed} of {total} completed"
+
+#: apps/web/app/components/tasks.tsx:132
+msgid "{total, plural, one {# task} other {# tasks}}"
+msgstr "{total, plural, one {# task} other {# tasks}}"
+
+#: apps/mobile/app/index.tsx:66
+msgid "A calm home for your tasks, ideas, and everyday progress."
+msgstr "A calm home for your tasks, ideas, and everyday progress."
+
+#: apps/web/app/routes/home.tsx:173
+msgid "A calmer place to begin"
+msgstr "A calmer place to begin"
+
+#: apps/mobile/src/dashboard.tsx:161
+msgid "A fresh start"
+msgstr "A fresh start"
+
+#: apps/web/app/components/tasks.tsx:186
+msgid "A fresh start."
+msgstr "A fresh start."
+
+#: apps/web/app/routes/home.tsx:109
+msgid "A little focus. A little progress."
+msgstr "A little focus. A little progress."
+
+#: apps/mobile/src/dashboard.tsx:97
+msgid "A LITTLE PROGRESS, EVERY DAY"
+msgstr "A LITTLE PROGRESS, EVERY DAY"
+
+#: apps/mobile/app/index.tsx:34
+msgid "A little setup first"
+msgstr "A little setup first"
+
+#: apps/web/app/components/auth-form.tsx:52
+msgid "A little space for progress"
+msgstr "A little space for progress"
+
+#: apps/mobile/src/dashboard.tsx:225
+msgid "A quieter place to get things done."
+msgstr "A quieter place to get things done."
+
+#: apps/mobile/src/dashboard.tsx:122
+msgid "Add a small next step…"
+msgstr "Add a small next step…"
+
+#: apps/mobile/src/dashboard.tsx:129
+#: apps/web/app/components/tasks.tsx:153
+msgid "Add task"
+msgstr "Add task"
+
+#: apps/web/app/routes/home.tsx:80
+msgid "Add these public values to your local environment file, then restart the development server."
+msgstr "Add these public values to your local environment file, then restart the development server."
+
+#: apps/web/app/components/tasks.tsx:189
+msgid "Add your first task. Small steps make good things happen."
+msgstr "Add your first task. Small steps make good things happen."
+
+#: apps/mobile/src/dashboard.tsx:129
+#: apps/web/app/components/tasks.tsx:153
+msgid "Adding…"
+msgstr "Adding…"
+
+#: apps/web/app/routes/home.tsx:64
+msgid "Almost ready"
+msgstr "Almost ready"
+
+#: apps/web/app/components/auth-form.tsx:129
+msgid "Already have an account?"
+msgstr "Already have an account?"
+
+#: apps/web/app/components/auth-form.tsx:103
+msgid "At least 8 characters."
+msgstr "At least 8 characters."
+
+#: apps/web/app/root.tsx:43
+msgid "Back to workspace"
+msgstr "Back to workspace"
+
+#: apps/mobile/src/auth-form.tsx:80
+#: apps/web/app/components/auth-form.tsx:37
+msgid "Check your email to confirm your account, then sign in."
+msgstr "Check your email to confirm your account, then sign in."
+
+#: apps/web/app/routes/home.tsx:70
+msgid "Connect this app to your Supabase project to enable accounts, profiles, and private tasks."
+msgstr "Connect this app to your Supabase project to enable accounts, profiles, and private tasks."
+
+#: apps/web/app/components/auth-form.tsx:119
+msgid "Create account"
+msgstr "Create account"
+
+#: apps/mobile/src/auth-form.tsx:98
+#: apps/web/app/components/auth-form.tsx:142
+msgid "Create an account"
+msgstr "Create an account"
+
+#: apps/web/app/components/auth-form.tsx:65
+msgid "Create your private workspace and turn a little intention into everyday progress."
+msgstr "Create your private workspace and turn a little intention into everyday progress."
+
+#. placeholder {0}: task.title
+#: apps/mobile/src/dashboard.tsx:289
+#: apps/web/app/components/tasks.tsx:70
+msgid "Delete task: {0}"
+msgstr "Delete task: {0}"
+
+#: apps/mobile/src/dashboard.tsx:327
+#: apps/web/app/components/profile.tsx:46
+msgid "Display name"
+msgstr "Display name"
+
+#: apps/mobile/src/auth-form.tsx:51
+#: apps/web/app/components/auth-form.tsx:73
+msgid "Email address"
+msgstr "Email address"
+
+#: apps/mobile/src/auth-form.tsx:28
+#: apps/web/app/components/auth-form.tsx:25
+msgid "Enter a valid email and a password with at least 8 characters."
+msgstr "Enter a valid email and a password with at least 8 characters."
+
+#: apps/mobile/src/dashboard.tsx:79
+msgid "Give your task a title between 1 and 160 characters."
+msgstr "Give your task a title between 1 and 160 characters."
+
+#: apps/mobile/app/index.tsx:61
+msgid "Good things start\n"
+"with a clear mind."
+msgstr "Good things start\n"
+"with a clear mind."
+
+#: apps/web/app/routes/home.tsx:112
+msgid "Keep the important things close, and take them one at a time."
+msgstr "Keep the important things close, and take them one at a time."
+
+#: apps/web/app/components/locale-switcher.tsx:7
+msgid "Language"
+msgstr "Language"
+
+#: apps/web/app/routes/home.tsx:153
+msgid "Less noise.<0/>More possibility."
+msgstr "Less noise.<0/>More possibility."
+
+#: apps/mobile/src/dashboard.tsx:197
+msgid "Loading profile"
+msgstr "Loading profile"
+
+#: apps/web/app/components/profile.tsx:110
+msgid "Loading profile…"
+msgstr "Loading profile…"
+
+#: apps/mobile/src/dashboard.tsx:135
+msgid "Loading tasks"
+msgstr "Loading tasks"
+
+#: apps/web/app/components/tasks.tsx:169
+msgid "Loading your tasks…"
+msgstr "Loading your tasks…"
+
+#: apps/web/app/routes/home.tsx:169
+msgid "Made for the things that matter."
+msgstr "Made for the things that matter."
+
+#: apps/web/app/components/auth-form.tsx:58
+msgid "Make room for what matters."
+msgstr "Make room for what matters."
+
+#: apps/mobile/src/dashboard.tsx:103
+msgid "Make space for today."
+msgstr "Make space for today."
+
+#: apps/web/app/components/auth-form.tsx:127
+msgid "New around here?"
+msgstr "New around here?"
+
+#: apps/web/app/components/tasks.tsx:138
+msgid "New task"
+msgstr "New task"
+
+#: apps/mobile/src/dashboard.tsx:167
+msgid "Nothing here yet. Add your first task above."
+msgstr "Nothing here yet. Add your first task above."
+
+#: apps/web/app/components/auth-form.tsx:115
+msgid "One moment…"
+msgstr "One moment…"
+
+#: apps/web/app/components/tasks.tsx:124
+msgid "One step at a time"
+msgstr "One step at a time"
+
+#: apps/mobile/src/dashboard.tsx:104
+msgid "One thing at a time. You've got this."
+msgstr "One thing at a time. You've got this."
+
+#: apps/web/app/routes/home.tsx:131
+msgid "Only you can access your tasks. A space that's yours, by design."
+msgstr "Only you can access your tasks. A space that's yours, by design."
+
+#: apps/web/app/routes/home.tsx:89
+msgid "Opening your workspace…"
+msgstr "Opening your workspace…"
+
+#: apps/mobile/src/auth-form.tsx:64
+#: apps/web/app/components/auth-form.tsx:89
+msgid "Password"
+msgstr "Password"
+
+#: apps/web/app/root.tsx:40
+msgid "Please reload the page to try again."
+msgstr "Please reload the page to try again."
+
+#: apps/mobile/src/auth-form.tsx:89
+msgid "Please wait…"
+msgstr "Please wait…"
+
+#: apps/mobile/src/dashboard.tsx:343
+#: apps/web/app/components/profile.tsx:75
+msgid "Profile saved."
+msgstr "Profile saved."
+
+#: apps/web/app/routes/home.tsx:97
+msgid "Reload"
+msgstr "Reload"
+
+#: apps/mobile/app/index.tsx:42
+msgid "Restoring your session"
+msgstr "Restoring your session"
+
+#: apps/mobile/src/dashboard.tsx:345
+#: apps/web/app/components/profile.tsx:84
+msgid "Save profile"
+msgstr "Save profile"
+
+#: apps/mobile/src/dashboard.tsx:345
+#: apps/web/app/components/profile.tsx:84
+msgid "Saving…"
+msgstr "Saving…"
+
+#: apps/mobile/src/auth-form.tsx:89
+#: apps/web/app/components/auth-form.tsx:117
+#: apps/web/app/components/auth-form.tsx:142
+msgid "Sign in"
+msgstr "Sign in"
+
+#: apps/mobile/src/dashboard.tsx:219
+#: apps/web/app/routes/home.tsx:55
+msgid "Sign out"
+msgstr "Sign out"
+
+#: apps/mobile/src/dashboard.tsx:219
+#: apps/web/app/routes/home.tsx:55
+msgid "Signing out…"
+msgstr "Signing out…"
+
+#: apps/web/app/routes/home.tsx:40
+msgid "Skip to content"
+msgstr "Skip to content"
+
+#: apps/web/app/root.tsx:37
+msgid "Something went wrong"
+msgstr "Something went wrong"
+
+#: apps/web/app/components/tasks.tsx:205
+msgid "Task completion"
+msgstr "Task completion"
+
+#: apps/mobile/src/dashboard.tsx:132
+#: apps/web/app/components/tasks.tsx:86
+msgid "That change didn't save. Please try again."
+msgstr "That change didn't save. Please try again."
+
+#: apps/mobile/app/index.tsx:38
+msgid "This workspace isn't connected yet. Add the Supabase URL and publishable key to the mobile environment, then restart the app."
+msgstr "This workspace isn't connected yet. Add the Supabase URL and publishable key to the mobile environment, then restart the app."
+
+#: apps/mobile/src/dashboard.tsx:144
+#: apps/mobile/src/dashboard.tsx:206
+#: apps/web/app/components/profile.tsx:118
+#: apps/web/app/components/tasks.tsx:177
+msgid "Try again"
+msgstr "Try again"
+
+#: apps/mobile/src/dashboard.tsx:317
+msgid "Use a name between 1 and 80 characters."
+msgstr "Use a name between 1 and 80 characters."
+
+#: apps/web/app/components/auth-form.tsx:22
+#~ msgid "Use a password with at least 8 characters."
+#~ msgstr "Use a password with at least 8 characters."
+
+#: apps/web/app/components/auth-form.tsx:42
+msgid "We couldn't create your account. Check your details and try again."
+msgstr "We couldn't create your account. Check your details and try again."
+
+#: apps/mobile/src/auth-form.tsx:42
+msgid "We couldn't create your account. Please try again."
+msgstr "We couldn't create your account. Please try again."
+
+#: apps/mobile/src/dashboard.tsx:200
+#: apps/web/app/components/profile.tsx:115
+msgid "We couldn't load your profile."
+msgstr "We couldn't load your profile."
+
+#: apps/mobile/src/dashboard.tsx:138
+#: apps/web/app/components/tasks.tsx:174
+msgid "We couldn't load your tasks."
+msgstr "We couldn't load your tasks."
+
+#: apps/web/app/routes/home.tsx:94
+msgid "We couldn't restore your session. Please reload to try again."
+msgstr "We couldn't restore your session. Please reload to try again."
+
+#: apps/web/app/components/auth-form.tsx:41
+msgid "We couldn't sign you in. Check your email and password and try again."
+msgstr "We couldn't sign you in. Check your email and password and try again."
+
+#: apps/mobile/src/auth-form.tsx:41
+msgid "We couldn't sign you in. Check your email and password, then try again."
+msgstr "We couldn't sign you in. Check your email and password, then try again."
+
+#: apps/mobile/src/dashboard.tsx:212
+#: apps/web/app/routes/home.tsx:121
+msgid "We couldn't sign you out. Please try again."
+msgstr "We couldn't sign you out. Please try again."
+
+#: apps/web/app/components/auth-form.tsx:56
+msgid "Welcome back."
+msgstr "Welcome back."
+
+#: apps/web/app/components/tasks.tsx:146
+msgid "What would you like to get done?"
+msgstr "What would you like to get done?"
+
+#: apps/mobile/src/dashboard.tsx:118
+msgid "What's on your mind?"
+msgstr "What's on your mind?"
+
+#: apps/web/app/components/tasks.tsx:111
+msgid "Write a task between 1 and 160 characters."
+msgstr "Write a task between 1 and 160 characters."
+
+#: apps/web/app/components/auth-form.tsx:63
+msgid "Your ideas, your tasks, your next step. Pick up where you left off."
+msgstr "Your ideas, your tasks, your next step. Pick up where you left off."
+
+#: apps/web/app/components/profile.tsx:36
+msgid "Your name must be between 1 and 80 characters."
+msgstr "Your name must be between 1 and 80 characters."
+
+#: apps/mobile/app/index.tsx:71
+msgid "Your previous session couldn't be restored. Please sign in again."
+msgstr "Your previous session couldn't be restored. Please sign in again."
+
+#: apps/web/app/routes/home.tsx:106
+msgid "Your private workspace"
+msgstr "Your private workspace"
+
+#: apps/mobile/src/dashboard.tsx:192
+#: apps/web/app/components/profile.tsx:105
+msgid "Your profile"
+msgstr "Your profile"
+
+#: apps/web/app/components/profile.tsx:70
+msgid "Your profile couldn't be saved. Please try again."
+msgstr "Your profile couldn't be saved. Please try again."
+
+#: apps/mobile/src/dashboard.tsx:341
+msgid "Your profile didn't save. Please try again."
+msgstr "Your profile didn't save. Please try again."
+
+#: apps/mobile/app/index.tsx:55
+msgid "YOUR SPACE TO FOCUS"
+msgstr "YOUR SPACE TO FOCUS"
+
+#: apps/web/app/components/tasks.tsx:163
+msgid "Your task couldn't be added. Please try again."
+msgstr "Your task couldn't be added. Please try again."
+
+#: apps/mobile/src/dashboard.tsx:108
+#: apps/web/app/components/tasks.tsx:127
+msgid "Your tasks"
+msgstr "Your tasks"
+
+#: apps/mobile/src/auth-form.tsx:103
+msgid "Your tasks are private. Make room for what matters."
+msgstr "Your tasks are private. Make room for what matters."
+
+#: apps/web/app/routes/home.tsx:67
+msgid "Your workspace is taking shape."
+msgstr "Your workspace is taking shape."

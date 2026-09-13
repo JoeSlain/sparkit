@@ -1,0 +1,23 @@
+{
+  "name": "@agency/supabase",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./database.types": "./src/database.types.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@agency/validation": "workspace:*",
+    "@supabase/supabase-js": "2.116.0",
+    "valibot": "1.5.0"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3",
+    "vitest": "4.1.0"
+  }
+}

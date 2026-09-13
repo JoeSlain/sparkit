@@ -1,0 +1,62 @@
+{
+  "name": "agency-starter",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev:web": "pnpm --filter @agency/web dev",
+    "dev:mobile": "pnpm --filter @agency/mobile dev",
+    "build": "turbo run build --concurrency=2",
+    "typecheck": "turbo run typecheck --concurrency=2",
+    "lint": "oxlint .",
+    "format": "oxfmt --write .",
+    "format:check": "oxfmt --check .",
+    "test": "vitest run",
+    "test:components": "turbo run test --concurrency=2",
+    "test:e2e": "node scripts/test-web.mjs",
+    "verify": "node scripts/verify.mjs",
+    "i18n:extract": "lingui extract",
+    "i18n:compile": "lingui compile --strict --typescript",
+    "i18n:check": "node scripts/check-i18n.mjs",
+    "env:check": "varlock load",
+    "db:start": "node scripts/local.mjs start",
+    "db:stop": "node scripts/local.mjs stop",
+    "db:reset": "node scripts/local.mjs reset",
+    "db:test": "node scripts/local.mjs test",
+    "env:local": "node scripts/local.mjs env",
+    "create:project": "node scripts/create-project.mjs",
+    "worktree": "node scripts/worktree.mjs",
+    "deadcode": "knip",
+    "db:types": "node scripts/local.mjs types",
+    "db:seed": "node supabase/seed-local.mjs",
+    "test:integration": "pnpm --filter @agency/integration test:integration",
+    "hooks:install": "lefthook install"
+  },
+  "devDependencies": {
+    "@lingui/cli": "6.7.0",
+    "@lingui/conf": "6.7.0",
+    "@lingui/format-po": "6.7.0",
+    "@types/node": "22.20.2",
+    "knip": "6.35.1",
+    "lefthook": "2.1.12",
+    "oxfmt": "0.67.0",
+    "oxlint": "1.82.0",
+    "stim": "1.2.0",
+    "turbo": "2.10.12",
+    "typescript": "6.0.3",
+    "varlock": "1.19.0",
+    "vitest": "4.1.0"
+  },
+  "engines": {
+    "node": ">=24.16.0 <25"
+  },
+  "packageManager": "pnpm@10.34.5",
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "react-dom"
+      ]
+    }
+  }
+}

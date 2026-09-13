@@ -13,7 +13,7 @@ Travail dans `/Users/joe/dev/agency-starter` uniquement.
 | 6 Générateur web/mobile/both      | **Partiel** | Copies QA validées (install + contrôles ciblés). `verify` complet par copie et cycle worktree Git réel restent après premier commit.                                        |
 | 3–5 Docker / backend / E2E / Stim | **Fait***   | Docker + backend + Playwright **3/3**. Stim iOS sim + Auth Argent. Stim Android Pixel 9 Pro build/launch OK. *Maestro sign-in encore flaky ; UI Android post-launch = PIN. |
 
-Prochaine action utile : premier commit local (si pas encore fait), puis `pnpm worktree` live. Android AVD : ≥ ~10 Gio libres ; device physique : `EXPO_PUBLIC_SUPABASE_ANDROID_URL=http://<LAN>:54381` (émulateur = `10.0.2.2`). Relancer Docker avec env minimal si `unexpected EOF`.
+Prochaine action utile : cycle `pnpm worktree` live (HEAD existe). Android AVD : ≥ ~10 Gio libres ; device physique : `EXPO_PUBLIC_SUPABASE_ANDROID_URL=http://<LAN>:54381` (émulateur = `10.0.2.2`). Relancer Docker avec env minimal si `unexpected EOF`.
 
 ---
 
@@ -35,7 +35,7 @@ Le nom `agency-starter`, la licence MIT et l’exemple profil/tâches privées o
 
 ## État Git — à lire avant toute opération
 
-Dépôt Git initialisé sur `main`. Premier commit local prévu juste après cette passe ; vérifier `git log -1` avant toute opération destructive. Le lockfile est aligné avec les manifests après la reprise (Tamagui lean + deps web validation) ; `pnpm install --frozen-lockfile` a réussi. Ne pas utiliser `git clean`, ne pas remplacer le dossier et ne pas supposer que les fichiers non suivis sont jetables.
+Dépôt Git sur `main` avec premier commit local `bee42c8` (pas de remote). Vérifier `git log -1` avant toute opération destructive. Le lockfile est aligné avec les manifests après la reprise (Tamagui lean + deps web validation) ; `pnpm install --frozen-lockfile` a réussi. Ne pas utiliser `git clean`, ne pas remplacer le dossier et ne pas supposer que les fichiers non suivis sont jetables.
 
 Les agents ont travaillé dans des chemins disjoints : backend, frontend web, mobile ; le coordinateur a écrit l’outillage, i18n, le générateur et CI. Lire [AGENTS.md](../AGENTS.md), [PLAN.md](PLAN.md) et [CONTRACTS.md](CONTRACTS.md).
 

@@ -1,5 +1,5 @@
 {
-  "name": "@agency/supabase",
+  "name": "@sparkit/supabase",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -12,7 +12,7 @@
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
-    "@agency/validation": "workspace:*",
+    "@sparkit/validation": "workspace:*",
     "@supabase/supabase-js": "2.116.0",
     "valibot": "1.5.0"
   },

@@ -1,5 +1,5 @@
 {
-  "name": "@agency/integrations",
+  "name": "@sparkit/integrations",
   "version": "0.1.0",
   "private": true,
   "type": "module",

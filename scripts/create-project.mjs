@@ -89,11 +89,12 @@ export function createProject({ destination, name, targets = 'both', source = te
         textExtensions.test(entry.name) ||
         ['AGENTS.md', '.env.example', '.env.schema'].includes(entry.name)
       ) {
+        const slug = name.replaceAll('-', '');
         const text = readFileSync(file, 'utf8')
-          .replaceAll('agency-starter', name)
-          .replaceAll('@agency/', `@${name}/`)
-          .replaceAll('agencystarter://', `${name.replaceAll('-', '')}://`)
-          .replaceAll('com.agencystarter.app', `com.${name.replaceAll('-', '')}.app`);
+          .replaceAll('com.sparkit.app', `com.${slug}.app`)
+          .replaceAll('sparkit://', `${slug}://`)
+          .replaceAll('@sparkit/', `@${name}/`)
+          .replaceAll('sparkit', name);
         writeFileSync(file, text);
       }
     }
@@ -170,7 +171,7 @@ export function createProject({ destination, name, targets = 'both', source = te
   rmSync(resolve(output, 'pnpm-lock.yaml'), { force: true });
   writeFileSync(
     resolve(output, 'template.json'),
-    `${JSON.stringify({ template: 'agency-starter', templateVersion: '0.1.0', targets, generatedAt: new Date().toISOString() }, null, 2)}\n`,
+    `${JSON.stringify({ template: 'sparkit', templateVersion: '0.1.0', targets, generatedAt: new Date().toISOString() }, null, 2)}\n`,
   );
   return output;
 }

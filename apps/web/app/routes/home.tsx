@@ -13,7 +13,7 @@ import { Button } from '../components/ui/button';
 import { Notice } from '../components/ui/notice';
 
 export function meta() {
-  return [{ title: 'Workspace · Agency Starter' }];
+  return [{ title: 'Workspace · Sparkit' }];
 }
 export default function Home() {
   const { session, loading, failed } = useSession(client);

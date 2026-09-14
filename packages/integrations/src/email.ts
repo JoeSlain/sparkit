@@ -24,7 +24,7 @@ export async function sendTransactionalEmail(
   const from =
     payload.from ??
     trimPublicConfig(options?.defaultFrom ?? process.env.RESEND_FROM) ??
-    'Agency Starter <onboarding@resend.dev>';
+    'Sparkit <onboarding@resend.dev>';
   const resend = new Resend(apiKey);
   const result = await resend.emails.send({
     from,

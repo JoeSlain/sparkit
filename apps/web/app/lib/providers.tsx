@@ -1,4 +1,4 @@
-import { createI18n, activateLocale, type Locale } from '@agency/i18n';
+import { createI18n, activateLocale, type Locale } from '@sparkit/i18n';
 import { I18nProvider } from '@lingui/react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import {
@@ -15,7 +15,7 @@ import { createQueryClient } from './query';
 let volatileLocale: Locale | undefined;
 function readLocale(): Locale {
   try {
-    const stored = localStorage.getItem('agency.locale');
+    const stored = localStorage.getItem('sparkit.locale');
     if (stored === 'en' || stored === 'fr') return stored;
   } catch {
     /* Browser storage may be disabled. */
@@ -23,21 +23,21 @@ function readLocale(): Locale {
   return volatileLocale ?? (navigator.language.startsWith('fr') ? 'fr' : 'en');
 }
 function subscribeLocale(onChange: () => void) {
-  window.addEventListener('agency-locale', onChange);
+  window.addEventListener('sparkit-locale', onChange);
   window.addEventListener('storage', onChange);
   return () => {
-    window.removeEventListener('agency-locale', onChange);
+    window.removeEventListener('sparkit-locale', onChange);
     window.removeEventListener('storage', onChange);
   };
 }
 function changeLocale(locale: Locale) {
   try {
-    localStorage.setItem('agency.locale', locale);
+    localStorage.setItem('sparkit.locale', locale);
     volatileLocale = undefined;
   } catch {
     volatileLocale = locale;
   }
-  window.dispatchEvent(new Event('agency-locale'));
+  window.dispatchEvent(new Event('sparkit-locale'));
 }
 const LocaleContext = createContext<{ locale: Locale; changeLocale: (locale: Locale) => void }>({
   locale: 'en',

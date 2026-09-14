@@ -1,15 +1,15 @@
 # Shared implementation contract
 
-Namespace: `@agency/*`. pnpm workspace dependencies: `workspace:*`. Source exports are TypeScript; bundlers/tests transpile them.
+Namespace: `@sparkit/*`. pnpm workspace dependencies: `workspace:*`. Source exports are TypeScript; bundlers/tests transpile them.
 
 ## Packages
 
-- `@agency/validation`: Valibot `taskInputSchema` ({title}, trimmed 1..160), `profileInputSchema` ({display_name}, trimmed 1..80), `authInputSchema` ({email,password}, password >=8), `localeSchema` (en/fr). Export inferred input types.
-- `@agency/supabase`: `Database`, `Task`, `Profile`, `AppClient`; `createAppClient({url,publishableKey,storage?,persistSession?,detectSessionInUrl?})`; `listTasks(client)`, `createTask(client,{title})`, `setTaskCompleted(client,{id,completed})`, `deleteTask(client,id)`, `getProfile(client)`, `updateProfile(client,{display_name})`. Throw API errors; never return failures as successful query data. Task: id, user_id, title, completed, created_at, updated_at. Profile: id=auth user id, display_name, created_at, updated_at. All dates strings to clients.
-- `@agency/db`: Drizzle schema, migration export/check tooling; server-only. Supabase SQL migrations in `supabase/migrations` are applied only by Supabase CLI.
-- `@agency/i18n`: `Locale = 'en'|'fr'`, `createI18n(locale?:Locale)`, `activateLocale(instance,locale)`. Coordinator owns catalogs/config; UI agents use Lingui macros with readable English source messages and stable explicit IDs where sensible. Coordinator extracts/translates after screens exist.
-- `@agency/integrations`: optional provider contracts and gated adapters. Public DSN/keys live in `VITE_*` / `EXPO_PUBLIC_*`. Server secrets (`SENTRY_AUTH_TOKEN`, `RESEND_API_KEY`) never enter client bundles. Disabled when unset: no network traffic.
-- `@agency/tokens`: shared raw design values, no React imports.
+- `@sparkit/validation`: Valibot `taskInputSchema` ({title}, trimmed 1..160), `profileInputSchema` ({display_name}, trimmed 1..80), `authInputSchema` ({email,password}, password >=8), `localeSchema` (en/fr). Export inferred input types.
+- `@sparkit/supabase`: `Database`, `Task`, `Profile`, `AppClient`; `createAppClient({url,publishableKey,storage?,persistSession?,detectSessionInUrl?})`; `listTasks(client)`, `createTask(client,{title})`, `setTaskCompleted(client,{id,completed})`, `deleteTask(client,id)`, `getProfile(client)`, `updateProfile(client,{display_name})`. Throw API errors; never return failures as successful query data. Task: id, user_id, title, completed, created_at, updated_at. Profile: id=auth user id, display_name, created_at, updated_at. All dates strings to clients.
+- `@sparkit/db`: Drizzle schema, migration export/check tooling; server-only. Supabase SQL migrations in `supabase/migrations` are applied only by Supabase CLI.
+- `@sparkit/i18n`: `Locale = 'en'|'fr'`, `createI18n(locale?:Locale)`, `activateLocale(instance,locale)`. Coordinator owns catalogs/config; UI agents use Lingui macros with readable English source messages and stable explicit IDs where sensible. Coordinator extracts/translates after screens exist.
+- `@sparkit/integrations`: optional provider contracts and gated adapters. Public DSN/keys live in `VITE_*` / `EXPO_PUBLIC_*`. Server secrets (`SENTRY_AUTH_TOKEN`, `RESEND_API_KEY`) never enter client bundles. Disabled when unset: no network traffic.
+- `@sparkit/tokens`: shared raw design values, no React imports.
 
 ## UI example
 

@@ -1,9 +1,9 @@
-import { profileInputSchema } from '@agency/validation';
+import { profileInputSchema } from '@sparkit/validation';
 import { safeParse } from 'valibot';
 import { useState, type FormEvent } from 'react';
 import { Trans, useLingui } from '@lingui/react/macro';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { getProfile, updateProfile, type AppClient } from '@agency/supabase';
+import { getProfile, updateProfile, type AppClient } from '@sparkit/supabase';
 import { profileKey } from '../lib/query';
 import { Button } from './ui/button';
 import { Input } from './ui/input';

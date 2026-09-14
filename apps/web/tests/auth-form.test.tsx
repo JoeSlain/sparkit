@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { I18nProvider } from '@lingui/react';
 import { setupI18n } from '@lingui/core';
 import { describe, expect, it, vi } from 'vitest';
-import type { AppClient } from '@agency/supabase';
+import type { AppClient } from '@sparkit/supabase';
 import { AuthForm } from '../app/components/auth-form';
 function show(client: AppClient) {
   return render(

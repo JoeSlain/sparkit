@@ -1,12 +1,12 @@
 {
-  "name": "agency-starter",
+  "name": "sparkit",
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev:web": "pnpm --filter @agency/web dev",
-    "dev:mobile": "pnpm --filter @agency/mobile dev",
+    "dev:web": "pnpm --filter @sparkit/web dev",
+    "dev:mobile": "pnpm --filter @sparkit/mobile dev",
     "build": "turbo run build --concurrency=2",
     "typecheck": "turbo run typecheck --concurrency=2",
     "lint": "oxlint .",
@@ -31,7 +31,7 @@
     "deadcode": "knip",
     "db:types": "node scripts/local.mjs types",
     "db:seed": "node supabase/seed-local.mjs",
-    "test:integration": "pnpm --filter @agency/integration test:integration",
+    "test:integration": "pnpm --filter @sparkit/integration test:integration",
     "hooks:install": "lefthook install"
   },
   "devDependencies": {

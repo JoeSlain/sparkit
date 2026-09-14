@@ -1,4 +1,4 @@
-import { taskInputSchema } from '@agency/validation';
+import { taskInputSchema } from '@sparkit/validation';
 import { safeParse } from 'valibot';
 import { useState, type FormEvent } from 'react';
 import { Trans, Plural, useLingui } from '@lingui/react/macro';
@@ -10,7 +10,7 @@ import {
   setTaskCompleted,
   type AppClient,
   type Task,
-} from '@agency/supabase';
+} from '@sparkit/supabase';
 import { taskKey } from '../lib/query';
 import { Button } from './ui/button';
 import { Input } from './ui/input';

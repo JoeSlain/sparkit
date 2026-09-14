@@ -13,7 +13,7 @@ import { getLocales } from 'expo-localization';
 import * as SecureStore from 'expo-secure-store';
 import NetInfo from '@react-native-community/netinfo';
 import { I18nProvider } from '@lingui/react';
-import { createI18n, activateLocale, type Locale } from '@agency/i18n';
+import { createI18n, activateLocale, type Locale } from '@sparkit/i18n';
 import type { Session } from '@supabase/supabase-js';
 import { QueryClientProvider, focusManager, onlineManager } from '@tanstack/react-query';
 import { TamaguiProvider } from '@tamagui/core';

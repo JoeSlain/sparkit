@@ -1,7 +1,7 @@
 import { Pressable } from 'react-native';
 import { Text } from '@tamagui/core';
 import { XStack } from '@tamagui/stacks';
-import { colors } from '@agency/tokens';
+import { colors } from '@sparkit/tokens';
 import { useLocale } from './providers';
 
 export function LocaleSwitch() {

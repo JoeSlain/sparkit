@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Keyboard } from 'react-native';
 import { useLingui } from '@lingui/react/macro';
 import { safeParse } from 'valibot';
-import { authInputSchema } from '@agency/validation';
+import { authInputSchema } from '@sparkit/validation';
 import { Text } from '@tamagui/core';
 import { YStack } from '@tamagui/stacks';
 import { Action, Field, Notice } from './ui';

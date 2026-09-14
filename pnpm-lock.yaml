@@ -53,21 +53,6 @@ importers:
 
   apps/mobile:
     dependencies:
-      '@agency/i18n':
-        specifier: workspace:*
-        version: link:../../packages/i18n
-      '@agency/integrations':
-        specifier: workspace:*
-        version: link:../../packages/integrations
-      '@agency/supabase':
-        specifier: workspace:*
-        version: link:../../packages/supabase
-      '@agency/tokens':
-        specifier: workspace:*
-        version: link:../../packages/tokens
-      '@agency/validation':
-        specifier: workspace:*
-        version: link:../../packages/validation
       '@lingui/core':
         specifier: 6.7.0
         version: 6.7.0(@babel/core@7.29.0)(@babel/types@7.29.8)
@@ -80,6 +65,21 @@ importers:
       '@sentry/react-native':
         specifier: 8.26.0
         version: 8.26.0(@expo/env@2.4.3)(dotenv@17.4.2)(encoding@0.1.13)(expo@57.0.22)(react-native@0.86.3(@babel/core@7.29.0)(@react-native/jest-preset@0.86.3(@babel/core@7.29.0)(react@19.3.0))(@react-native/metro-config@0.86.3(@babel/core@7.29.0))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)
+      '@sparkit/i18n':
+        specifier: workspace:*
+        version: link:../../packages/i18n
+      '@sparkit/integrations':
+        specifier: workspace:*
+        version: link:../../packages/integrations
+      '@sparkit/supabase':
+        specifier: workspace:*
+        version: link:../../packages/supabase
+      '@sparkit/tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
+      '@sparkit/validation':
+        specifier: workspace:*
+        version: link:../../packages/validation
       '@supabase/supabase-js':
         specifier: 2.116.0
         version: 2.116.0
@@ -192,18 +192,6 @@ importers:
 
   apps/web:
     dependencies:
-      '@agency/i18n':
-        specifier: workspace:*
-        version: link:../../packages/i18n
-      '@agency/integrations':
-        specifier: workspace:*
-        version: link:../../packages/integrations
-      '@agency/supabase':
-        specifier: workspace:*
-        version: link:../../packages/supabase
-      '@agency/validation':
-        specifier: workspace:*
-        version: link:../../packages/validation
       '@lingui/core':
         specifier: 6.7.0
         version: 6.7.0(@babel/core@7.29.0)(@babel/types@7.29.8)
@@ -213,6 +201,18 @@ importers:
       '@sentry/react':
         specifier: 10.74.0
         version: 10.74.0(react@19.3.0)
+      '@sparkit/i18n':
+        specifier: workspace:*
+        version: link:../../packages/i18n
+      '@sparkit/integrations':
+        specifier: workspace:*
+        version: link:../../packages/integrations
+      '@sparkit/supabase':
+        specifier: workspace:*
+        version: link:../../packages/supabase
+      '@sparkit/validation':
+        specifier: workspace:*
+        version: link:../../packages/validation
       '@supabase/supabase-js':
         specifier: 2.116.0
         version: 2.116.0
@@ -334,7 +334,7 @@ importers:
 
   packages/supabase:
     dependencies:
-      '@agency/validation':
+      '@sparkit/validation':
         specifier: workspace:*
         version: link:../validation
       '@supabase/supabase-js':
@@ -372,7 +372,7 @@ importers:
 
   tests/integration:
     dependencies:
-      '@agency/supabase':
+      '@sparkit/supabase':
         specifier: workspace:*
         version: link:../../packages/supabase
       '@supabase/supabase-js':

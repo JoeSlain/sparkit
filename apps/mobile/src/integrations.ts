@@ -16,7 +16,7 @@ import {
   type ObservabilityClient,
   type OfflineSyncClient,
   type PaymentsClient,
-} from '@agency/integrations';
+} from '@sparkit/integrations';
 
 const sentryDsn = trimPublicConfig(process.env.EXPO_PUBLIC_SENTRY_DSN);
 const posthogKey = trimPublicConfig(process.env.EXPO_PUBLIC_POSTHOG_KEY);

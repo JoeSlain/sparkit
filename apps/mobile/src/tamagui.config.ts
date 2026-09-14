@@ -1,5 +1,5 @@
 import { createFont, createTamagui, createTokens } from '@tamagui/core';
-import { colors } from '@agency/tokens';
+import { colors } from '@sparkit/tokens';
 
 const body = createFont({
   family: 'System',

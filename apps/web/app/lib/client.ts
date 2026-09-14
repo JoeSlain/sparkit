@@ -1,4 +1,4 @@
-import { createAppClient } from '@agency/supabase';
+import { createAppClient } from '@sparkit/supabase';
 
 export function readConfiguration(env: Record<string, string | undefined>) {
   const url = env.VITE_SUPABASE_URL?.trim();

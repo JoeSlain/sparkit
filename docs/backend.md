@@ -4,11 +4,11 @@ The starter uses real Supabase Auth, Postgres and private Storage. Browser and n
 
 ## Package boundaries
 
-| Package              | Responsibility                                                           | Allowed consumers               |
-| -------------------- | ------------------------------------------------------------------------ | ------------------------------- |
-| `@agency/validation` | Runtime validation and normalized input types                            | Browser, native, trusted server |
-| `@agency/supabase`   | Public client factory, generated DB types, typed profile/task operations | Browser and native              |
-| `@agency/db`         | Drizzle table definitions, schema snapshots and migration export tooling | Server/tooling only             |
+| Package               | Responsibility                                                           | Allowed consumers               |
+| --------------------- | ------------------------------------------------------------------------ | ------------------------------- |
+| `@sparkit/validation` | Runtime validation and normalized input types                            | Browser, native, trusted server |
+| `@sparkit/supabase`   | Public client factory, generated DB types, typed profile/task operations | Browser and native              |
+| `@sparkit/db`         | Drizzle table definitions, schema snapshots and migration export tooling | Server/tooling only             |
 
 `createAppClient` accepts platform-specific auth storage. Native supplies secure storage; the browser uses the Supabase browser storage adapter. The UI owns the session lifecycle, query keys by user ID and clearing cached private data when an account changes. Do not put service keys, connection strings or Drizzle database clients into public bundles.
 
@@ -31,13 +31,13 @@ The Auth foreign key, triggers, private functions, policies and grants are SQL-o
 Drizzle owns application table definitions in `packages/db/src/schema.ts`. The exact ORM/kit pair is pinned. Generated SQL and snapshots live in `packages/db/drizzle/`; immutable exports live in `supabase/migrations/`. Supabase CLI is the **only** migration runner.
 
 ```sh
-pnpm --filter @agency/db generate --name describe_change
-pnpm --filter @agency/db export
-pnpm --filter @agency/db check
+pnpm --filter @sparkit/db generate --name describe_change
+pnpm --filter @sparkit/db export
+pnpm --filter @sparkit/db check
 pnpm db:reset
 pnpm db:test
 pnpm db:types
-pnpm --filter @agency/integration test:integration
+pnpm --filter @sparkit/integration test:integration
 ```
 
 Review generated SQL before exporting. Do not use `drizzle-kit push` or maintain a second deployed Drizzle migration history. The exporter refuses to overwrite changed SQL and detects missing/orphaned generated exports. Put new Supabase-only resources in a separately timestamped migration using `pnpm exec supabase migration new describe_security_change`; apply it after the related tables.
@@ -75,9 +75,9 @@ The root worktree tooling is responsible for assigning these resources. Do not m
 ## Tests
 
 ```sh
-pnpm --filter @agency/validation test
+pnpm --filter @sparkit/validation test
 pnpm db:test
-pnpm --filter @agency/integration test:integration
+pnpm --filter @sparkit/integration test:integration
 ```
 
 Validation tests check normalization, boundary lengths, field stripping, email/password handling and locales.

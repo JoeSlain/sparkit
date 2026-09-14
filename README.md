@@ -1,4 +1,4 @@
-# Agency Starter
+# Sparkit
 
 Un starter TypeScript pour créer une application iOS/Android, une application web, ou les deux. Le projet est indépendant de l’App Factory : il peut être copié, versionné et maintenu séparément.
 
@@ -113,6 +113,6 @@ Une DB Postgres par branche ne suffit pas à isoler Auth, Storage et les autres 
 - [Application native](apps/mobile/README.md)
 - [Contribuer](CONTRIBUTING.md) et [sécurité](SECURITY.md)
 
-Les profils Sentry, PostHog, RevenueCat, Resend, notifications et offline sont **préparés dans le code** (`@agency/integrations` + wiring web/mobile) et restent **éteints sans variables**. Pas de trafic réseau optionnel en local par défaut. design-ops / heavy-ops restent documentaires. Les configurations EAS doivent être reliées à un projet et à des credentials avant toute release.
+Les profils Sentry, PostHog, RevenueCat, Resend, notifications et offline sont **préparés dans le code** (`@sparkit/integrations` + wiring web/mobile) et restent **éteints sans variables**. Pas de trafic réseau optionnel en local par défaut. design-ops / heavy-ops restent documentaires. Les configurations EAS doivent être reliées à un projet et à des credentials avant toute release.
 
 Licence MIT. Consulter `LICENSE`.

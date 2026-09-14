@@ -9,7 +9,7 @@ import {
   taskInputSchema,
   type ProfileInput,
   type TaskInput,
-} from '@agency/validation';
+} from '@sparkit/validation';
 import type { Database } from './database.types';
 
 export type { Database } from './database.types';

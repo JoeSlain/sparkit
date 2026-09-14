@@ -7,7 +7,7 @@ const targetDir = fileURLToPath(new URL('../../../supabase/migrations/', import.
 const check = process.argv.includes('--check');
 const files = (await readdir(authorDir)).filter((name) => /^\d{14}_.+\.sql$/.test(name)).sort();
 if (!files.length)
-  throw new Error('No Drizzle SQL found. Run pnpm --filter @agency/db generate first.');
+  throw new Error('No Drizzle SQL found. Run pnpm --filter @sparkit/db generate first.');
 for (const file of files) {
   const sql = await readFile(path.join(authorDir, file), 'utf8');
   const target = path.join(targetDir, file);
@@ -22,7 +22,7 @@ for (const file of files) {
   if (existing !== undefined && existing !== expected)
     throw new Error(`Export differs: ${file}. Published migrations are immutable.`);
   if (existing === undefined) {
-    if (check) throw new Error(`Missing export: ${file}. Run pnpm --filter @agency/db export.`);
+    if (check) throw new Error(`Missing export: ${file}. Run pnpm --filter @sparkit/db export.`);
     await writeFile(target, expected, { flag: 'wx' });
   }
 }

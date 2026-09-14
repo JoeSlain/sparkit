@@ -4,16 +4,16 @@ Le générateur implémente actuellement trois **cibles** : `web`, `mobile` et `
 
 ## Ce qui est présent
 
-| Capacité                     | État                                                                                        |
-| ---------------------------- | ------------------------------------------------------------------------------------------- |
-| Auth, profil, tâches privées | Implémentés avec Supabase et RLS                                                            |
-| Stockage privé               | Bucket, policies et tests API ; aucune interface d’upload d’exemple                         |
-| Validation et FR/EN          | Valibot et Lingui partagés ; `pnpm i18n:translate` optionnel                                |
-| UI web et native             | Applications séparées, contrats et tokens partagés                                          |
-| Intégrations optionnelles    | Code préparé dans `@agency/integrations` + apps ; **désactivé sans config** (pas de trafic) |
-| Génération par cible         | `--targets web\|mobile\|both`                                                               |
-| Worktrees                    | Branche Git, configuration Supabase locale et ports distincts                               |
-| EAS                          | Profiles + caches Gradle/ccache ; projet cloud et credentials à relier                      |
+| Capacité                     | État                                                                                         |
+| ---------------------------- | -------------------------------------------------------------------------------------------- |
+| Auth, profil, tâches privées | Implémentés avec Supabase et RLS                                                             |
+| Stockage privé               | Bucket, policies et tests API ; aucune interface d’upload d’exemple                          |
+| Validation et FR/EN          | Valibot et Lingui partagés ; `pnpm i18n:translate` optionnel                                 |
+| UI web et native             | Applications séparées, contrats et tokens partagés                                           |
+| Intégrations optionnelles    | Code préparé dans `@sparkit/integrations` + apps ; **désactivé sans config** (pas de trafic) |
+| Génération par cible         | `--targets web\|mobile\|both`                                                                |
+| Worktrees                    | Branche Git, configuration Supabase locale et ports distincts                                |
+| EAS                          | Profiles + caches Gradle/ccache ; projet cloud et credentials à relier                       |
 
 ## Règle d’activation
 
@@ -43,7 +43,7 @@ Web paywall non inclus (choix produit). Webhooks serveur à ajouter côté backe
 
 ## `email` — Resend
 
-**Code** : `@agency/integrations/email` (`sendTransactionalEmail`). Serveur/CI uniquement.
+**Code** : `@sparkit/integrations/email` (`sendTransactionalEmail`). Serveur/CI uniquement.
 
 **Activer** : `RESEND_API_KEY` (+ `RESEND_FROM` optionnel).
 

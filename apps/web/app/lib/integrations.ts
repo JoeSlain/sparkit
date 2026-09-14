@@ -6,7 +6,7 @@ import {
   trimPublicConfig,
   type AnalyticsClient,
   type ObservabilityClient,
-} from '@agency/integrations';
+} from '@sparkit/integrations';
 
 const sentryDsn = trimPublicConfig(import.meta.env.VITE_SENTRY_DSN);
 const posthogKey = trimPublicConfig(import.meta.env.VITE_POSTHOG_KEY);

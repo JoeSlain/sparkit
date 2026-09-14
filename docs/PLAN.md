@@ -1,6 +1,6 @@
 # Implementation plan
 
-Status: core implementation exists; local validation largely closed. Playwright E2E 3/3; Stim iOS sim + Android physical device launch proven; Maestro full sign-in still flaky. First local commit + real worktree cycle remain. Read [HANDOFF.md](HANDOFF.md). Working name `agency-starter`; MIT license.
+Status: core implementation exists; local validation largely closed. Playwright E2E 3/3; Stim iOS sim + Android physical device launch proven; Maestro full sign-in still flaky. First local commit + real worktree cycle remain. Read [HANDOFF.md](HANDOFF.md). Working name `sparkit`; MIT license.
 
 ## Deliverable
 

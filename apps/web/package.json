@@ -1,5 +1,5 @@
 {
-  "name": "@agency/web",
+  "name": "@sparkit/web",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -12,13 +12,13 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@agency/i18n": "workspace:*",
-    "@agency/integrations": "workspace:*",
-    "@agency/supabase": "workspace:*",
-    "@agency/validation": "workspace:*",
     "@lingui/core": "6.7.0",
     "@lingui/react": "6.7.0",
     "@sentry/react": "10.74.0",
+    "@sparkit/i18n": "workspace:*",
+    "@sparkit/integrations": "workspace:*",
+    "@sparkit/supabase": "workspace:*",
+    "@sparkit/validation": "workspace:*",
     "@supabase/supabase-js": "2.116.0",
     "@tanstack/react-query": "5.102.8",
     "posthog-js": "1.433.1",

@@ -32,7 +32,7 @@ Les commits suivent une forme conventionnelle : `feat:`, `fix:`, `docs:`, `test:
 ## Frontières à conserver
 
 - Le natif est Expo/React Native ; le web utilise React Router/Vite. Ne pas ajouter Expo Web implicitement.
-- `@agency/db` reste réservé au serveur et aux outils. Le client importe `@agency/supabase`.
+- `@sparkit/db` reste réservé au serveur et aux outils. Le client importe `@sparkit/supabase`.
 - Supabase CLI est le seul exécuteur de migrations. Les migrations appliquées sont immuables.
 - Les clés publiques peuvent être distribuées ; les clés administratives et secrets restent côté serveur/outils.
 - Les intégrations optionnelles doivent fonctionner désactivées, sans trafic fournisseur caché.

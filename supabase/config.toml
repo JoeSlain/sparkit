@@ -1,4 +1,4 @@
-project_id = "agency-starter"
+project_id = "sparkit"
 
 [api]
 enabled = true
@@ -38,11 +38,7 @@ file_size_limit = "10MiB"
 [auth]
 enabled = true
 site_url = "http://localhost:5173"
-additional_redirect_urls = [
-  "http://localhost:5173/**",
-  "http://127.0.0.1:5173/**",
-  "agencystarter://**",
-]
+additional_redirect_urls = ["http://localhost:5173/**", "http://127.0.0.1:5173/**", "sparkit://**"]
 jwt_expiry = 3600
 enable_signup = true
 enable_anonymous_sign_ins = false

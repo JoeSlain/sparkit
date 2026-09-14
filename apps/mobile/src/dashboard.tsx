@@ -16,9 +16,9 @@ import {
   type AppClient,
   type Profile,
   type Task,
-} from '@agency/supabase';
-import { taskInputSchema, profileInputSchema } from '@agency/validation';
-import { colors } from '@agency/tokens';
+} from '@sparkit/supabase';
+import { taskInputSchema, profileInputSchema } from '@sparkit/validation';
+import { colors } from '@sparkit/tokens';
 import { Action, Card, Field, Notice } from './ui';
 
 export function Dashboard({ client, user }: { client: AppClient; user: User }) {

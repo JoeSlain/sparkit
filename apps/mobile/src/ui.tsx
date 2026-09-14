@@ -2,7 +2,7 @@ import type { ComponentProps, PropsWithChildren } from 'react';
 import { Pressable, StyleSheet, TextInput, type TextInputProps } from 'react-native';
 import { Text } from '@tamagui/core';
 import { XStack, YStack } from '@tamagui/stacks';
-import { colors } from '@agency/tokens';
+import { colors } from '@sparkit/tokens';
 
 export function Field({ label, ...props }: TextInputProps & { label: string }) {
   return (

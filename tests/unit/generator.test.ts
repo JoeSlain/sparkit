@@ -16,18 +16,18 @@ import { createProject, validateProjectName } from '../../scripts/create-project
 import { ticketConfig, prepareBackend } from '../../scripts/worktree.mjs';
 const paths: string[] = [];
 function fixture() {
-  const dir = mkdtempSync(resolve(tmpdir(), 'agency-generator-'));
+  const dir = mkdtempSync(resolve(tmpdir(), 'sparkit-generator-'));
   paths.push(dir);
   const source = resolve(dir, 'template');
   mkdirSync(source);
   const files: Record<string, string> = {
     'package.json': JSON.stringify({
-      name: 'agency-starter',
+      name: 'sparkit',
       scripts: { 'dev:web': 'web', 'dev:mobile': 'mobile', 'test:e2e': 'test' },
       devDependencies: { stim: '1.2.0' },
     }),
-    'apps/web/package.json': '{"name":"@agency/web"}',
-    'apps/mobile/app.json': '{"bundleIdentifier":"com.agencystarter.app"}',
+    'apps/web/package.json': '{"name":"@sparkit/web"}',
+    'apps/mobile/app.json': '{"bundleIdentifier":"com.sparkit.app"}',
     '.env.local': 'PRIVATE=secret',
     '.env.example': 'PUBLIC=placeholder',
     '.local/secret.json': 'secret',
@@ -36,7 +36,7 @@ function fixture() {
     'pnpm-lock.yaml': 'old lock',
     'tests/maestro/smoke.yaml': 'flow',
     'supabase/config.toml':
-      'project_id = "agency-starter"\n[api]\nport = 54381\n[auth]\nsite_url = "http://localhost:5173"\n',
+      'project_id = "sparkit"\n[api]\nport = 54381\n[auth]\nsite_url = "http://localhost:5173"\n',
     'supabase/migrations/initial.sql': 'select 1;',
     'supabase/seed.sql': 'select 1;',
   };
@@ -105,7 +105,7 @@ test('worktree runtime isolates project and ports without modifying tracked conf
   expect(config.branch).toBe('codex/app-123-profile');
   expect(ticketConfig('APP-123-profile')).toEqual(config);
   const runtime = readFileSync(resolve(f.source, '.local/backend/supabase/config.toml'), 'utf8');
-  expect(runtime).toContain('agency-starter-app-123-profile');
+  expect(runtime).toContain('sparkit-app-123-profile');
   expect(runtime).toContain(String(config.apiPort));
   expect(readFileSync(resolve(f.source, 'supabase/config.toml'), 'utf8')).toBe(before);
   expect(() => ticketConfig('../bad')).toThrow();

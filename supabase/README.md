@@ -7,10 +7,10 @@ pnpm db:start
 pnpm db:reset
 pnpm db:test
 node supabase/seed-local.mjs
-pnpm --filter @agency/integration test:integration
+pnpm --filter @sparkit/integration test:integration
 ```
 
-Local services use API 54381, Postgres 54382, shadow 54383, Studio 54384 and mail inbox 54385. OAuth provider credentials are not configured. Email confirmations are disabled **only for this local fixture**. Enable confirmations and explicit redirect allowlists for a hosted project. Native deep links use `agencystarter://`; generated applications must configure their own scheme in both Expo and Supabase.
+Local services use API 54381, Postgres 54382, shadow 54383, Studio 54384 and mail inbox 54385. OAuth provider credentials are not configured. Email confirmations are disabled **only for this local fixture**. Enable confirmations and explicit redirect allowlists for a hosted project. Native deep links use `sparkit://`; generated applications must configure their own scheme in both Expo and Supabase.
 
 The seed script creates `alice@example.test` and `bob@example.test`, both with the public local-only password `Local-test-password-42!`. It reads credentials from this project's `supabase status` without printing them, refuses non-loopback endpoints and never uses a remote environment variable. Never create these fixture accounts on a remote project.
 

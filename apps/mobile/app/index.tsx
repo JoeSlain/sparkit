@@ -3,7 +3,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Text } from '@tamagui/core';
 import { XStack, YStack } from '@tamagui/stacks';
 import { useLingui } from '@lingui/react/macro';
-import { colors } from '@agency/tokens';
+import { colors } from '@sparkit/tokens';
 import { client } from '../src/client';
 import { AuthForm } from '../src/auth-form';
 import { Brand, Card, Notice } from '../src/ui';

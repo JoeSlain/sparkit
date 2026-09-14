@@ -12,8 +12,8 @@ From the repository root:
 
 ```sh
 pnpm dev:mobile
-pnpm --filter @agency/mobile typecheck
-pnpm --filter @agency/mobile test
+pnpm --filter @sparkit/mobile typecheck
+pnpm --filter @sparkit/mobile test
 ```
 
 From this directory, the resource-owning agent uses `stim guide agent`, `stim doctor`,

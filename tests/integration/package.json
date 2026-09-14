@@ -1,5 +1,5 @@
 {
-  "name": "@agency/integration",
+  "name": "@sparkit/integration",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -8,7 +8,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@agency/supabase": "workspace:*",
+    "@sparkit/supabase": "workspace:*",
     "@supabase/supabase-js": "2.116.0"
   },
   "devDependencies": {

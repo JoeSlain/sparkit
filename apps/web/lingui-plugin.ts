@@ -4,7 +4,7 @@ import type { Plugin } from 'vite';
 /** Expand Lingui macros before Vite strips TypeScript and transforms JSX. */
 export function linguiMacros(): Plugin {
   return {
-    name: 'agency-lingui-macros',
+    name: 'sparkit-lingui-macros',
     enforce: 'pre',
     async transform(code, id) {
       if (!/\.[cm]?[jt]sx?$/.test(id) || !code.includes('/macro')) return;

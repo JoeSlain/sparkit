@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { Session } from '@supabase/supabase-js';
-import type { AppClient } from '@agency/supabase';
+import type { AppClient } from '@sparkit/supabase';
 import { useQueryClient } from '@tanstack/react-query';
 
 export function useSession(client: AppClient | null) {

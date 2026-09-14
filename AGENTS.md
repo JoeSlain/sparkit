@@ -1,4 +1,4 @@
-# Agency Starter
+# Sparkit
 
 Independent open-source starter. Work only in this repository and its explicitly created worktrees.
 

@@ -1,8 +1,8 @@
-import { authInputSchema } from '@agency/validation';
+import { authInputSchema } from '@sparkit/validation';
 import { safeParse } from 'valibot';
 import { useState, type FormEvent } from 'react';
 import { Trans, useLingui } from '@lingui/react/macro';
-import type { AppClient } from '@agency/supabase';
+import type { AppClient } from '@sparkit/supabase';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Notice } from './ui/notice';

@@ -1,18 +1,18 @@
 {
   "expo": {
     "name": "Workspace",
-    "slug": "agency-starter",
-    "scheme": "agencystarter",
+    "slug": "sparkit",
+    "scheme": "sparkit",
     "version": "1.0.0",
     "orientation": "portrait",
     "platforms": ["ios", "android"],
     "userInterfaceStyle": "light",
     "ios": {
-      "bundleIdentifier": "com.agencystarter.app",
+      "bundleIdentifier": "com.sparkit.app",
       "supportsTablet": true
     },
     "android": {
-      "package": "com.agencystarter.app"
+      "package": "com.sparkit.app"
     },
     "plugins": [
       "expo-router",

@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { test as base, expect } from '@playwright/test';
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
-import type { Database } from '@agency/supabase';
+import type { Database } from '@sparkit/supabase';
 
 type Account = { id: string; email: string; password: string };
 type Backend = {

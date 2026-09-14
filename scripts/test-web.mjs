@@ -33,7 +33,7 @@ await new Promise((resolve, reject) => {
   probe.once('error', reject);
   probe.listen(port, '127.0.0.1', () => probe.close(resolve));
 });
-const server = spawn('pnpm', ['--filter', '@agency/web', 'dev', '--port', String(port)], {
+const server = spawn('pnpm', ['--filter', '@sparkit/web', 'dev', '--port', String(port)], {
   cwd: root,
   env: appEnvironment,
   stdio: 'inherit',
@@ -79,11 +79,15 @@ try {
   }
   if (!ready) throw new Error('Web server readiness timed out.');
   const result = await new Promise((resolve, reject) => {
-    const child = spawn('pnpm', ['--filter', '@agency/web', 'test:e2e', ...process.argv.slice(2)], {
-      cwd: root,
-      env: testEnvironment,
-      stdio: 'inherit',
-    });
+    const child = spawn(
+      'pnpm',
+      ['--filter', '@sparkit/web', 'test:e2e', ...process.argv.slice(2)],
+      {
+        cwd: root,
+        env: testEnvironment,
+        stdio: 'inherit',
+      },
+    );
     child.once('error', reject);
     child.once('exit', (code, signal) => resolve(code ?? (signal ? 1 : 0)));
   });

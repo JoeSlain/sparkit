@@ -9,7 +9,7 @@ import {
   setTaskCompleted,
   updateProfile,
   type AppClient,
-} from '@agency/supabase';
+} from '@sparkit/supabase';
 import { createLocalAdmin, getLocalConfig } from '../../supabase/local-config.mjs';
 
 // These tests require the real local stack; unavailable infrastructure is a failure, not a skip.

@@ -2,7 +2,7 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { describe, expect, it, vi } from 'vitest';
 import type { ReactNode } from 'react';
-import type { AppClient } from '@agency/supabase';
+import type { AppClient } from '@sparkit/supabase';
 import type { Session } from '@supabase/supabase-js';
 import { createQueryClient, taskKey } from '../app/lib/query';
 import { useSession } from '../app/lib/use-session';

@@ -55,9 +55,9 @@ Adapter la plateforme pour Android. Réutiliser le device et Metro indiqués par
 ## Changer le backend
 
 ```sh
-pnpm --filter @agency/db generate --name nom_du_changement
-pnpm --filter @agency/db export
-pnpm --filter @agency/db check
+pnpm --filter @sparkit/db generate --name nom_du_changement
+pnpm --filter @sparkit/db export
+pnpm --filter @sparkit/db check
 pnpm db:reset
 pnpm db:test
 pnpm db:types

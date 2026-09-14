@@ -1,10 +1,10 @@
-# Passation — Agency Starter
+# Passation — Sparkit
 
 Mis à jour le 13 septembre 2026, vers 15 h 20 Europe/Paris. **Ce document ne constitue pas une autorisation de publier** (pas de GitHub / EAS cloud / stores).
 
 ## Reprise — avancement (clôturé localement)
 
-Travail dans `/Users/joe/dev/agency-starter` uniquement.
+Travail dans `/Users/joe/dev/sparkit` uniquement.
 
 | Priorité                          | État        | Preuve                                                                                                                                                                     |
 | --------------------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -19,7 +19,7 @@ Prochaine action utile : cycle `pnpm worktree` live (HEAD existe). Android AVD :
 
 ## Demande et décisions à préserver
 
-Créer un template open source réutilisable, indépendant de l’App Factory. Le dépôt local est `/Users/joe/dev/agency-starter`. Le répertoire initial de la conversation était `/Users/joe/dev/app-factory` : toujours préciser le bon répertoire de travail ; ne pas modifier l’App Factory.
+Créer un template open source réutilisable, indépendant de l’App Factory. Le dépôt local est `/Users/joe/dev/sparkit`. Le répertoire initial de la conversation était `/Users/joe/dev/app-factory` : toujours préciser le bon répertoire de travail ; ne pas modifier l’App Factory.
 
 - Utiliser **pnpm**, décision utilisateur la plus récente. Nub sera évalué plus tard ; ne pas réintroduire Nub maintenant.
 - Mobile : Expo natif iOS/Android, Expo Router, Tamagui 2. **Pas d’Expo Web.**
@@ -31,7 +31,7 @@ Créer un template open source réutilisable, indépendant de l’App Factory. L
 - Les profils externes sont pour le moment des **recettes documentées**, pas des SDK actifs : Sentry, PostHog, RevenueCat, Resend, notifications, offline, design-ops, hébergement avancé. Ils restent à implémenter/qualifier selon la portée retenue. Ne pas présenter Sentry comme déjà branché.
 - Ne pas publier sur GitHub, déployer, lancer EAS Cloud, créer des comptes payants ou soumettre aux stores sans décision de release.
 
-Le nom `agency-starter`, la licence MIT et l’exemple profil/tâches privées ont été retenus comme choix de travail. Le projet n’a pas encore de dépôt distant.
+Le nom `sparkit`, la licence MIT et l’exemple profil/tâches privées ont été retenus comme choix de travail. Le projet n’a pas encore de dépôt distant.
 
 ## État Git — à lire avant toute opération
 
@@ -59,7 +59,7 @@ Les primitives web sont locales ; ce n’est pas une installation complète de s
 
 Versions principales : Node `24.16.0`, pnpm `10.34.5`, Expo `57.0.22`, React `19.3.0`, React Native `0.86.3`, Tamagui `2.7.7`, Lingui `6.7.0`, Supabase JS `2.116.0`, Query `5.102.8`, Valibot `1.5.0`, Router `8.3.1`, Vite `8.3.0`, Vitest `5.0.0`, TypeScript `6.0.3`, Stim `1.3.1`, Turbo `2.10.12`. Vérifier les manifests pour les pins finaux.
 
-Expo a nécessité de fixer Reanimated `4.5.1`, Worklets `0.10.1`, Metro config `0.86.3` plutôt que les peers plus récents installés automatiquement. L’app utilise `com.agencystarter.app`, scheme `agencystarter`, runtimeVersion `fingerprint`. Les configs EAS existent, mais aucun projet EAS ni OTA réelle n’est configuré.
+Expo a nécessité de fixer Reanimated `4.5.1`, Worklets `0.10.1`, Metro config `0.86.3` plutôt que les peers plus récents installés automatiquement. L’app utilise `com.sparkit.app`, scheme `sparkit`, runtimeVersion `fingerprint`. Les configs EAS existent, mais aucun projet EAS ni OTA réelle n’est configuré.
 
 ## Preuves et limites de validation
 
@@ -80,7 +80,7 @@ Les résultats suivants ont réellement été obtenus. Les changements de finiti
 | Export natif JS/Hermes     | iOS et Android réussis via `pnpm verify` à la reprise ; ce ne sont pas des binaires natifs                       |
 | Playwright apparence       | 1 scénario réussi (session antérieure) : FR/EN, persistance, tabulation, 390 px                                  |
 | Playwright métier          | **3/3 OK** à la reprise (apparence + workspace + signup) ; toggle corrigé (optimistic + click async)             |
-| Build/lancement iOS        | **OK** : `stim ios` → com.agencystarter.app sur BA7F60CF…, Metro 8082 ; Auth confirmée Argent                    |
+| Build/lancement iOS        | **OK** : `stim ios` → com.sparkit.app sur BA7F60CF…, Metro 8082 ; Auth confirmée Argent                          |
 | Build/lancement Android    | **OK** device : `stim android --device 56171FDAP000TX` (Pixel 9 Pro) ; APK + bundle Metro OK ; AVD bloqué ENOSPC |
 | Maestro / Argent UI suite  | Auth iOS Argent OK ; Maestro sign-in flaky (focus TextInput / Save Password) ; pas de parcours complet vert      |
 | Projet généré web seul     | Rejoué : install, Lingui, typecheck, 8 tests, build SPA ; aucun Expo/RN                                          |
@@ -107,14 +107,14 @@ Cause : import du paquet parapluie `tamagui` → `@tamagui/menu` → `@tamagui/p
 
 Dernière mesure : environ **12 Gio** libres sur `/` — encore sous la marge 15–20 Go pour les builds iOS.
 
-**Docker réparé le 13 sept. ~00:42** : control plane figé après `ENOSPC` (logs VM). Arrêt forcé des process Desktop (volumes intacts). Relance échouait avec `opening tray: starting electron: unmarshaling start request: unexpected EOF` tant que Docker était ouvert depuis un shell agent à gros environnement (bug Docker Desktop, limite spawn 16 KiB — voir docker/for-mac#7709). Correctif : lancer avec un env minimal, p.ex. `env -i HOME="$HOME" USER="$USER" PATH="/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin" open -a Docker`. Vérifié : `docker ps` OK, engine `28.5.1`, stack `agency-starter` healthy (edge_runtime relancé). Ne pas purger volumes/images des autres projets.
+**Docker réparé le 13 sept. ~00:42** : control plane figé après `ENOSPC` (logs VM). Arrêt forcé des process Desktop (volumes intacts). Relance échouait avec `opening tray: starting electron: unmarshaling start request: unexpected EOF` tant que Docker était ouvert depuis un shell agent à gros environnement (bug Docker Desktop, limite spawn 16 KiB — voir docker/for-mac#7709). Correctif : lancer avec un env minimal, p.ex. `env -i HOME="$HOME" USER="$USER" PATH="/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin" open -a Docker`. Vérifié : `docker ps` OK, engine `28.5.1`, stack `sparkit` healthy (edge_runtime relancé). Ne pas purger volumes/images des autres projets.
 
 ### 4. Rejouer le backend et les E2E web
 
-La stack principale utilise `project_id = "agency-starter"`, API `54381`, DB `54382`, shadow `54383`, Studio `54384` et mail local `54385`. Studio et imgproxy sont exclus du démarrage quotidien.
+La stack principale utilise `project_id = "sparkit"`, API `54381`, DB `54382`, shadow `54383`, Studio `54384` et mail local `54385`. Studio et imgproxy sont exclus du démarrage quotidien.
 
 ```sh
-cd /Users/joe/dev/agency-starter
+cd /Users/joe/dev/sparkit
 export PATH="/Users/joe/.nvm/versions/node/v24.16.0/bin:$PATH"
 pnpm install
 pnpm i18n:extract
@@ -139,14 +139,14 @@ Les tests de dépannage web ont utilisé temporairement le statut local mis en c
 Lire le skill Stim et `pnpm exec stim guide agent` de la version installée. Lancer Stim depuis `apps/mobile`, jamais depuis la racine du monorepo. Les scripts Metro/export sont limités à deux workers ; garder un seul build et un seul device à la fois.
 
 ```sh
-cd /Users/joe/dev/agency-starter/apps/mobile
+cd /Users/joe/dev/sparkit/apps/mobile
 pnpm exec stim doctor --platform ios
 pnpm exec stim start
 pnpm exec stim ios
 pnpm exec stim logs --errors
 ```
 
-Device créé par cette tâche : `BA7F60CF-4A39-4A2C-9904-45209FC7A0F0`, nommé `stim-agency-starter-mobile (iPhone 17 26.5)`. Il est arrêté. Metro utilisait le port 8082 ; **utiliser les nouvelles valeurs retournées par Stim à la reprise**. Identifiant app `com.agencystarter.app`.
+Device créé par cette tâche : `BA7F60CF-4A39-4A2C-9904-45209FC7A0F0`, nommé `stim-sparkit-mobile (iPhone 17 26.5)`. Il est arrêté. Metro utilisait le port 8082 ; **utiliser les nouvelles valeurs retournées par Stim à la reprise**. Identifiant app `com.sparkit.app`.
 
 Vérifier Auth, persistance de session après relance, profil, création/toggle/suppression d’une tâche, changement FR/EN et séparation des comptes avec Argent/Maestro. Le scénario est `tests/maestro/workspace.yaml`; lire ses variables et `apps/mobile/README.md`. Les comptes de fixtures sont locaux et documentés dans le README. Ne pas utiliser d’identifiants personnels.
 
@@ -173,7 +173,7 @@ pnpm i18n:extract
 pnpm i18n:compile
 pnpm verify
 pnpm i18n:check
-pnpm --filter @agency/db check
+pnpm --filter @sparkit/db check
 ```
 
 Le contrôle i18n compare désormais les catalogues avant/après extraction, même sans Git. Vérifier son comportement sur les trois cibles. Actualiser [PLAN.md](PLAN.md), README et un rapport final de validation. Examiner la CI, les suppressions de cibles dans le générateur et les exclusions Knip. Les jobs GitHub restent à exécuter après création du dépôt distant.
@@ -192,7 +192,7 @@ Les fichiers suivants ont été conservés sous `.local/handoff/` (ignorés par 
 
 Captures Playwright : sous `apps/web/test-results/`, notamment le dossier `appearance-auth-screen-sup-3a854-French-and-narrow-viewports-chromium`. Logs Stim : `/Users/joe/.stim/workspaces/mobile--ca39f463166a3d0b/logs`, à lire avec `stim logs` plutôt que d’inférer le succès depuis l’absence de logs.
 
-Copies de QA à la reprise : `/tmp/agency-qa-mobile` et `/tmp/agency-qa-both` (alignées sur le correctif Tamagui). La copie web seule a été validée puis supprimée pour l’espace. Elles ne sont pas le template source.
+Copies de QA à la reprise : `/tmp/sparkit-qa-mobile` et `/tmp/sparkit-qa-both` (alignées sur le correctif Tamagui). La copie web seule a été validée puis supprimée pour l’espace. Elles ne sont pas le template source.
 
 Pour récupérer de l’espace, seuls les Pods incomplets et DerivedData de **cette tâche** ainsi qu’un Chromium complet téléchargé pour ces tests ont été supprimés. Chromium headless a été conservé. Aucun nettoyage global de caches utilisateur, volumes Docker, autres projets ou devices personnels n’a été effectué. Le cache de compilation partagé Stim reste présent.
 

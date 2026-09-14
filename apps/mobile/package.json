@@ -1,5 +1,5 @@
 {
-  "name": "@agency/mobile",
+  "name": "@sparkit/mobile",
   "version": "0.1.0",
   "private": true,
   "main": "expo-router/entry",
@@ -15,15 +15,15 @@
     "build:android": "expo export --platform android --output-dir dist/android --max-workers 2"
   },
   "dependencies": {
-    "@agency/i18n": "workspace:*",
-    "@agency/integrations": "workspace:*",
-    "@agency/supabase": "workspace:*",
-    "@agency/tokens": "workspace:*",
-    "@agency/validation": "workspace:*",
     "@lingui/core": "6.7.0",
     "@lingui/react": "6.7.0",
     "@react-native-community/netinfo": "12.0.1",
     "@sentry/react-native": "8.26.0",
+    "@sparkit/i18n": "workspace:*",
+    "@sparkit/integrations": "workspace:*",
+    "@sparkit/supabase": "workspace:*",
+    "@sparkit/tokens": "workspace:*",
+    "@sparkit/validation": "workspace:*",
     "@supabase/supabase-js": "2.116.0",
     "@tamagui/core": "2.7.7",
     "@tamagui/stacks": "2.7.7",

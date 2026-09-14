@@ -1,4 +1,4 @@
-/** SERVER/TOOLING ONLY. Frontends import @agency/supabase, never this package. */
+/** SERVER/TOOLING ONLY. Frontends import @sparkit/supabase, never this package. */
 import { sql } from 'drizzle-orm';
 import { boolean, check, index, pgTable, text, timestamp, uuid } from 'drizzle-orm/pg-core';
 

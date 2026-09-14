@@ -1,5 +1,5 @@
 import { Platform } from 'react-native';
-import { createAppClient } from '@agency/supabase';
+import { createAppClient } from '@sparkit/supabase';
 import { secureStorage } from './secure-storage';
 
 const url = (

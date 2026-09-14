@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Language: fr\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Project-Id-Version: \n"
@@ -70,8 +70,12 @@ msgid "Add task"
 msgstr "Ajouter une tâche"
 
 #: apps/web/app/routes/home.tsx:80
-msgid "Add these public values to your local environment file, then restart the development server."
-msgstr "Ajoutez ces valeurs publiques à votre fichier d’environnement local, puis redémarrez le serveur de développement."
+msgid ""
+"Add these public values to your local environment file, then restart the "
+"development server."
+msgstr ""
+"Ajoutez ces valeurs publiques à votre fichier d’environnement local, puis "
+"redémarrez le serveur de développement."
 
 #: apps/web/app/components/tasks.tsx:189
 msgid "Add your first task. Small steps make good things happen."
@@ -104,8 +108,12 @@ msgid "Check your email to confirm your account, then sign in."
 msgstr "Confirmez votre compte depuis l’e-mail reçu, puis connectez-vous."
 
 #: apps/web/app/routes/home.tsx:70
-msgid "Connect this app to your Supabase project to enable accounts, profiles, and private tasks."
-msgstr "Connectez cette application à votre projet Supabase pour activer les comptes, les profils et les tâches privées."
+msgid ""
+"Connect this app to your Supabase project to enable accounts, profiles, and "
+"private tasks."
+msgstr ""
+"Connectez cette application à votre projet Supabase pour activer les "
+"comptes, les profils et les tâches privées."
 
 #: apps/web/app/components/auth-form.tsx:119
 msgid "Create account"
@@ -117,12 +125,14 @@ msgid "Create an account"
 msgstr "Créer un compte"
 
 #: apps/web/app/components/auth-form.tsx:65
-msgid "Create your private workspace and turn a little intention into everyday progress."
+msgid ""
+"Create your private workspace and turn a little intention into everyday "
+"progress."
 msgstr "Créez votre espace privé pour concrétiser vos idées au quotidien."
 
-#. placeholder {0}: task.title
 #: apps/mobile/src/dashboard.tsx:289
 #: apps/web/app/components/tasks.tsx:70
+#. placeholder {0}: task.title
 msgid "Delete task: {0}"
 msgstr "Supprimer la tâche : {0}"
 
@@ -139,16 +149,20 @@ msgstr "Adresse e-mail"
 #: apps/mobile/src/auth-form.tsx:28
 #: apps/web/app/components/auth-form.tsx:25
 msgid "Enter a valid email and a password with at least 8 characters."
-msgstr "Saisissez une adresse e-mail valide et un mot de passe d’au moins 8 caractères."
+msgstr ""
+"Saisissez une adresse e-mail valide et un mot de passe d’au moins 8 "
+"caractères."
 
 #: apps/mobile/src/dashboard.tsx:79
 msgid "Give your task a title between 1 and 160 characters."
 msgstr "Donnez à votre tâche un titre de 1 à 160 caractères."
 
 #: apps/mobile/app/index.tsx:61
-msgid "Good things start\n"
+msgid ""
+"Good things start\n"
 "with a clear mind."
-msgstr "Tout commence\n"
+msgstr ""
+"Tout commence\n"
 "avec les idées claires."
 
 #: apps/web/app/routes/home.tsx:112
@@ -293,8 +307,12 @@ msgid "That change didn't save. Please try again."
 msgstr "Cette modification n’a pas été enregistrée. Réessayez."
 
 #: apps/mobile/app/index.tsx:38
-msgid "This workspace isn't connected yet. Add the Supabase URL and publishable key to the mobile environment, then restart the app."
-msgstr "Cet espace n’est pas encore connecté. Ajoutez l’URL Supabase et la clé publique à l’environnement mobile, puis redémarrez l’application."
+msgid ""
+"This workspace isn't connected yet. Add the Supabase URL and publishable "
+"key to the mobile environment, then restart the app."
+msgstr ""
+"Cet espace n’est pas encore connecté. Ajoutez l’URL Supabase et la clé "
+"publique à l’environnement mobile, puis redémarrez l’application."
 
 #: apps/mobile/src/dashboard.tsx:144
 #: apps/mobile/src/dashboard.tsx:206
@@ -306,10 +324,6 @@ msgstr "Réessayer"
 #: apps/mobile/src/dashboard.tsx:317
 msgid "Use a name between 1 and 80 characters."
 msgstr "Utilisez un nom de 1 à 80 caractères."
-
-#: apps/web/app/components/auth-form.tsx:22
-#~ msgid "Use a password with at least 8 characters."
-#~ msgstr "Utilisez un mot de passe d’au moins 8 caractères."
 
 #: apps/web/app/components/auth-form.tsx:42
 msgid "We couldn't create your account. Check your details and try again."
@@ -335,11 +349,15 @@ msgstr "Impossible de restaurer votre session. Rechargez la page pour réessayer
 
 #: apps/web/app/components/auth-form.tsx:41
 msgid "We couldn't sign you in. Check your email and password and try again."
-msgstr "Connexion impossible. Vérifiez votre adresse e-mail et votre mot de passe, puis réessayez."
+msgstr ""
+"Connexion impossible. Vérifiez votre adresse e-mail et votre mot de passe, "
+"puis réessayez."
 
 #: apps/mobile/src/auth-form.tsx:41
 msgid "We couldn't sign you in. Check your email and password, then try again."
-msgstr "Connexion impossible. Vérifiez votre adresse e-mail et votre mot de passe, puis réessayez."
+msgstr ""
+"Connexion impossible. Vérifiez votre adresse e-mail et votre mot de passe, "
+"puis réessayez."
 
 #: apps/mobile/src/dashboard.tsx:212
 #: apps/web/app/routes/home.tsx:121
@@ -411,3 +429,7 @@ msgstr "Vos tâches sont privées. Faites place à l’essentiel."
 #: apps/web/app/routes/home.tsx:67
 msgid "Your workspace is taking shape."
 msgstr "Votre espace prend forme."
+
+#: apps/web/app/components/auth-form.tsx:22
+#~ msgid "Use a password with at least 8 characters."
+#~ msgstr "Utilisez un mot de passe d’au moins 8 caractères."

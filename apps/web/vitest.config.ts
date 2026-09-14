@@ -1,8 +1,9 @@
 import { defineConfig } from 'vitest/config';
-import { linguiMacros } from './lingui-plugin';
+import { linguiMacros } from './lingui-plugin.ts';
+
 export default defineConfig({
   plugins: [linguiMacros()],
-  esbuild: { jsx: 'automatic' },
+  oxc: { jsx: { runtime: 'automatic' } },
   test: {
     environment: 'jsdom',
     setupFiles: ['./tests/setup.ts'],

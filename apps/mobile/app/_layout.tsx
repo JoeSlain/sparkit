@@ -1,9 +1,11 @@
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import * as Sentry from '@sentry/react-native';
 import { Providers } from '../src/providers';
+import { getNativeObservability } from '../src/integrations';
 
-export default function RootLayout() {
+function RootLayout() {
   return (
     <SafeAreaProvider>
       <Providers>
@@ -13,3 +15,5 @@ export default function RootLayout() {
     </SafeAreaProvider>
   );
 }
+
+export default getNativeObservability().enabled ? Sentry.wrap(RootLayout) : RootLayout;

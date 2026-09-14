@@ -82,6 +82,7 @@ Choisir les identifiants de bundle, le scheme natif et les redirects Auth du pro
 | `pnpm db:types`         | Régénère les types à partir de la DB locale                                                |
 | `pnpm test:e2e`         | Lance son serveur web et Playwright contre Supabase local ; port web libre requis          |
 | `pnpm i18n:extract`     | Met à jour les messages des catalogues                                                     |
+| `pnpm i18n:translate`   | Remplit le français manquant via `lingui-ai-translate` (clé API requise, hors verify)      |
 | `pnpm i18n:check`       | Vérifie la présence des traductions attendues                                              |
 | `pnpm deadcode`         | Analyse des fichiers, exports et dépendances inutilisés                                    |
 | `pnpm db:stop`          | Arrête la stack locale de ce checkout                                                      |
@@ -112,6 +113,6 @@ Une DB Postgres par branche ne suffit pas à isoler Auth, Storage et les autres 
 - [Application native](apps/mobile/README.md)
 - [Contribuer](CONTRIBUTING.md) et [sécurité](SECURITY.md)
 
-Les profils Sentry, PostHog, RevenueCat, Resend, notifications, offline, design-ops et hébergement avancé sont documentés comme recettes. Ils ne sont pas annoncés comme des intégrations opérationnelles ou validées avec un compte réel. Les configurations EAS doivent être reliées à un projet et à des credentials avant toute release.
+Les profils Sentry, PostHog, RevenueCat, Resend, notifications et offline sont **préparés dans le code** (`@agency/integrations` + wiring web/mobile) et restent **éteints sans variables**. Pas de trafic réseau optionnel en local par défaut. design-ops / heavy-ops restent documentaires. Les configurations EAS doivent être reliées à un projet et à des credentials avant toute release.
 
 Licence MIT. Consulter `LICENSE`.

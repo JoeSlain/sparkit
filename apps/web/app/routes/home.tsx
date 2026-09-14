@@ -3,6 +3,7 @@ import { Trans } from '@lingui/react/macro';
 import { useQueryClient } from '@tanstack/react-query';
 import { client } from '../lib/client';
 import { useSession } from '../lib/use-session';
+import { WebIntegrations } from '../lib/web-integrations';
 import { Brand } from '../components/brand';
 import { LocaleSwitcher } from '../components/locale-switcher';
 import { AuthForm } from '../components/auth-form';
@@ -36,6 +37,7 @@ export default function Home() {
   }
   return (
     <div className="app-shell">
+      <WebIntegrations session={session} />
       <a className="skip-link" href="#main">
         <Trans>Skip to content</Trans>
       </a>

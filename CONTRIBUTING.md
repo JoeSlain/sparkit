@@ -58,6 +58,7 @@ Pour une modification de traduction :
 
 ```sh
 pnpm i18n:extract
+# optional: pnpm i18n:translate  (needs OPENAI_API_KEY or another provider key)
 pnpm i18n:check
 pnpm i18n:compile
 ```

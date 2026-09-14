@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agency Starter — vue d’ensemble</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #14201c;
+        --muted: #4a5a54;
+        --paper: #f3f6f2;
+        --band: #1f3d34;
+        --band-2: #0f241f;
+        --accent: #c45c26;
+        --line: rgba(20, 32, 28, 0.12);
+        --ok: #1f6b4a;
+        --warn: #8a5a12;
+        --gap: #6b4a5a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: 'Source Sans 3', system-ui, sans-serif;
+        line-height: 1.55;
+        background:
+          radial-gradient(1200px 500px at 10% -10%, rgba(196, 92, 38, 0.12), transparent 55%),
+          radial-gradient(900px 420px at 100% 0%, rgba(31, 61, 52, 0.14), transparent 50%),
+          linear-gradient(180deg, #e8efe9 0%, var(--paper) 28%, #eef2ec 100%);
+        min-height: 100vh;
+      }
+
+      main {
+        width: min(920px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 2.5rem 0 4rem;
+      }
+
+      .hero {
+        padding: 1.25rem 0 2rem;
+      }
+
+      .brand {
+        font-family: Fraunces, Georgia, serif;
+        font-size: clamp(2.4rem, 6vw, 3.6rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+        margin: 0 0 0.75rem;
+      }
+
+      .lede {
+        font-size: 1.15rem;
+        color: var(--muted);
+        max-width: 38rem;
+        margin: 0;
+      }
+
+      section {
+        margin: 1.75rem 0;
+        padding: 1.35rem 1.4rem 1.45rem;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        backdrop-filter: blur(6px);
+      }
+
+      h2 {
+        font-family: Fraunces, Georgia, serif;
+        font-size: 1.45rem;
+        margin: 0 0 0.85rem;
+        letter-spacing: -0.02em;
+      }
+
+      h3 {
+        font-size: 1rem;
+        margin: 1.1rem 0 0.45rem;
+      }
+
+      p {
+        margin: 0.45rem 0;
+      }
+
+      ul {
+        margin: 0.4rem 0 0;
+        padding-left: 1.15rem;
+      }
+
+      li {
+        margin: 0.28rem 0;
+      }
+
+      .grid {
+        display: grid;
+        gap: 0.85rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .tile {
+        padding: 0.95rem 1rem;
+        border-radius: 14px;
+        background: linear-gradient(160deg, #f8faf7, #eef3ee);
+        border: 1px solid var(--line);
+      }
+
+      .tile strong {
+        display: block;
+        font-size: 0.95rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .tile span {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .flow {
+        display: grid;
+        gap: 0.65rem;
+      }
+
+      .step {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.85rem;
+        align-items: start;
+        padding: 0.75rem 0.85rem;
+        border-radius: 12px;
+        background: #f7faf7;
+        border: 1px solid var(--line);
+      }
+
+      .n {
+        width: 1.7rem;
+        height: 1.7rem;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        background: var(--band);
+        color: #f5f8f5;
+        font-weight: 700;
+        font-size: 0.85rem;
+        margin-top: 0.1rem;
+      }
+
+      .step code {
+        font-size: 0.86rem;
+        background: rgba(20, 32, 28, 0.06);
+        padding: 0.08rem 0.35rem;
+        border-radius: 6px;
+      }
+
+      .status {
+        display: grid;
+        gap: 0.55rem;
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: 7.5rem 1fr;
+        gap: 0.75rem;
+        align-items: start;
+        padding: 0.55rem 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .row:last-child {
+        border-bottom: 0;
+      }
+
+      .badge {
+        display: inline-block;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        padding: 0.28rem 0.5rem;
+        border-radius: 999px;
+        width: fit-content;
+      }
+
+      .ok {
+        background: rgba(31, 107, 74, 0.12);
+        color: var(--ok);
+      }
+
+      .partial {
+        background: rgba(138, 90, 18, 0.14);
+        color: var(--warn);
+      }
+
+      .missing {
+        background: rgba(107, 74, 90, 0.12);
+        color: var(--gap);
+      }
+
+      .band {
+        margin-top: 1.5rem;
+        padding: 1.2rem 1.35rem;
+        border-radius: 18px;
+        color: #e8f0ea;
+        background:
+          linear-gradient(135deg, rgba(196, 92, 38, 0.22), transparent 42%),
+          linear-gradient(160deg, var(--band), var(--band-2));
+      }
+
+      .band h2 {
+        color: #f4f8f5;
+        margin-bottom: 0.55rem;
+      }
+
+      .band p,
+      .band li {
+        color: rgba(232, 240, 234, 0.92);
+      }
+
+      footer {
+        margin-top: 1.5rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 640px) {
+        .row {
+          grid-template-columns: 1fr;
+          gap: 0.3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <p class="brand">Agency Starter</p>
+        <p class="lede">
+          Un template MIT prêt à cloner : app mobile native (iOS/Android), app web SPA, et un vrai
+          backend Supabase local — avec auth, profil et tâches privées en FR/EN.
+        </p>
+      </header>
+
+      <section>
+        <h2>Ce qu’on a aujourd’hui</h2>
+        <div class="grid">
+          <div class="tile">
+            <strong>Deux apps</strong>
+            <span
+              >Web (React + Vite + React Router) et mobile (Expo + Tamagui), sans Expo Web.</span
+            >
+          </div>
+          <div class="tile">
+            <strong>Données réelles</strong>
+            <span>Supabase Auth + Postgres + Storage, schéma Drizzle, RLS testée.</span>
+          </div>
+          <div class="tile">
+            <strong>Exemple métier</strong>
+            <span
+              >Inscription / connexion, profil, CRUD tâches privées, cache par utilisateur.</span
+            >
+          </div>
+          <div class="tile">
+            <strong>Outillage</strong>
+            <span
+              >pnpm, Lingui FR/EN (+ <code>i18n:translate</code> IA optionnel), générateur, verify,
+              CI écrite (non publiée).</span
+            >
+          </div>
+        </div>
+        <p style="margin-top: 1rem; color: var(--muted)">
+          Dépôt local sur <code>main</code> (commits <code>bee42c8</code> + docs). Pas de remote
+          GitHub, pas d’EAS cloud, pas de stores.
+        </p>
+      </section>
+
+      <section>
+        <h2>À quoi ressemble le travail au quotidien</h2>
+        <div class="flow">
+          <div class="step">
+            <div class="n">1</div>
+            <div>
+              <strong>Installer et démarrer la stack</strong>
+              <p>
+                <code>pnpm install --frozen-lockfile</code> → <code>pnpm db:start</code> →
+                <code>pnpm db:seed</code>. Comptes démo locaux : alice / bob
+                (<code>@example.test</code>).
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="n">2</div>
+            <div>
+              <strong>Développer le web</strong>
+              <p>
+                <code>pnpm dev:web</code> sur <code>http://127.0.0.1:5173</code>. Même logique
+                métier que le mobile, UI web séparée.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="n">3</div>
+            <div>
+              <strong>Développer le mobile</strong>
+              <p>
+                Depuis <code>apps/mobile</code> : <code>stim start</code> puis
+                <code>stim ios</code> ou <code>stim android</code> (une plateforme à la fois). Fast
+                Refresh pour le JS.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="n">4</div>
+            <div>
+              <strong>Valider</strong>
+              <p>
+                <code>pnpm verify</code> (format, lint, types, tests, builds). Après extract :
+                <code>pnpm i18n:translate</code> si une clé IA est dispo, puis check/compile.
+                Backend : <code>pnpm db:test</code>. Web E2E : Playwright. Natif : Stim + Argent /
+                Maestro.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="n">5</div>
+            <div>
+              <strong>Créer un produit à partir du template</strong>
+              <p>
+                <code>pnpm create:project ../mon-app --name mon-app --targets both</code>
+                (ou <code>web</code> / <code>mobile</code>). Nouveau repo, nouveau lockfile, pas de
+                secrets copiés.
+              </p>
+            </div>
+          </div>
+        </div>
+        <h3>Mental model</h3>
+        <ul>
+          <li>
+            Tu changes le <em>produit</em> (écrans, schéma, messages), pas un framework magique.
+          </li>
+          <li>
+            Les packages partagent contrats / validation / i18n / client Supabase — pas les
+            composants UI.
+          </li>
+          <li>
+            Les services payants (Sentry, PostHog, RevenueCat…) sont des recettes documentées, pas
+            branchés.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>État de validation (honnête)</h2>
+        <div class="status">
+          <div class="row">
+            <span class="badge ok">OK</span>
+            <span
+              >Install figé, <code>pnpm verify</code>, Vitest / Jest, builds web + Hermes, backend
+              (pgTAP + intégration), Playwright 3/3, Stim iOS sim + Auth, Stim Android sur Pixel 9
+              Pro (build/launch).</span
+            >
+          </div>
+          <div class="row">
+            <span class="badge partial">Partiel</span>
+            <span
+              >Maestro : arrive à l’auth, sign-in flaky (focus TextInput / clavier). Générateur :
+              copies QA validées, pas un <code>verify</code> exhaustif sur chaque variante. Worktree
+              live : pas encore rejoué de bout en bout.</span
+            >
+          </div>
+          <div class="row">
+            <span class="badge missing">Absent</span>
+            <span
+              >Remote GitHub, CI exécutée en ligne, EAS / OTA cloud, comptes SaaS branchés,
+              soumission stores, parcours Maestro 100 % vert.</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <div class="band">
+        <h2>Ce qu’il manque (si tu veux “produit publié”)</h2>
+        <ul>
+          <li>Décider d’un remote + push (aujourd’hui tout est local).</li>
+          <li>Stabiliser Maestro (ou un flow Argent) pour le parcours auth → tâches sur device.</li>
+          <li>Brancher seulement les profils optionnels dont tu as vraiment besoin.</li>
+          <li>
+            Configurer EAS / identifiants stores / redirects Auth de prod quand tu es prêt à ship.
+          </li>
+          <li>
+            Garder ~10–15 Gio libres pour AVD Android ; sur téléphone : URL LAN Supabase, pas
+            <code>10.0.2.2</code>.
+          </li>
+        </ul>
+        <p style="margin-top: 0.85rem">
+          Pour un usage “starter interne / base de projet”, tu as déjà le cœur : code, preuves
+          locales, générateur, docs.
+        </p>
+      </div>
+
+      <footer>
+        Fichier généré pour expliquer le template — voir aussi
+        <code>docs/HANDOFF.md</code> et <code>README.md</code>.
+      </footer>
+    </main>
+  </body>
+</html>

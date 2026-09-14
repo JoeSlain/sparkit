@@ -1,16 +1,18 @@
 {
-  "name": "@agency/validation",
+  "name": "@agency/integrations",
   "version": "0.1.0",
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./email": "./src/email.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "vitest run"
   },
   "dependencies": {
+    "resend": "6.28.0",
     "valibot": "1.5.0"
   },
   "devDependencies": {

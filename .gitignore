@@ -20,3 +20,6 @@ supabase/.branches/
 *.log
 .DS_Store
 packages/i18n/locales/*/messages.ts
+
+# Local crash dumps
+erl_crash.dump

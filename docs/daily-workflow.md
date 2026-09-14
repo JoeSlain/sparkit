@@ -72,7 +72,7 @@ Drizzle décrit les tables ; Supabase CLI applique les migrations. Les policies,
 
 Exécuter les vérifications adaptées au changement. `pnpm verify` couvre les contrôles statiques, les tests des packages et les bundles. Ajouter `pnpm db:test` et `pnpm test:integration` pour le backend ; `pnpm test:e2e` pour le web ; les scénarios sur device pour le mobile. Le launcher Playwright démarre son propre serveur et refuse un port occupé. Depuis un worktree, fournir `WEB_PORT=PORT_AFFICHE pnpm test:e2e` après avoir arrêté le serveur web de développement sur ce port.
 
-Pour une traduction, exécuter `pnpm i18n:extract`, compléter les catalogues puis `pnpm i18n:check` et `pnpm i18n:compile`. Contrôler visuellement les deux langues : la compilation ne détecte pas tous les débordements.
+Pour une traduction, exécuter `pnpm i18n:extract`, compléter le catalogue français (à la main ou avec `pnpm i18n:translate` si une clé `OPENAI_API_KEY`, `ANTHROPIC_API_KEY` ou `GEMINI_API_KEY` est définie), puis `pnpm i18n:check` et `pnpm i18n:compile`. Relire les suggestions IA avant commit. Contrôler visuellement les deux langues : la compilation ne détecte pas tous les débordements.
 
 Dans la PR, expliquer le comportement attendu, les vérifications réellement exécutées et les prérequis externes encore absents. Ne pas présenter un mock de test comme une validation Supabase, un export JavaScript comme un build natif, ou une configuration EAS comme une release.
 

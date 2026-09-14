@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agency Starter — environnements &amp; releases</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@450&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #121a22;
+        --muted: #4d5b68;
+        --paper: #f2f5f8;
+        --card: rgba(255, 255, 255, 0.78);
+        --line: rgba(18, 26, 34, 0.1);
+        --sea: #0f3d4c;
+        --sea-2: #082833;
+        --clay: #b85a2b;
+        --ok: #1c6b4a;
+        --warn: #8a5a12;
+        --gap: #6a3d52;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: 'Source Sans 3', system-ui, sans-serif;
+        line-height: 1.55;
+        background:
+          radial-gradient(900px 420px at 0% -5%, rgba(184, 90, 43, 0.13), transparent 55%),
+          radial-gradient(800px 380px at 100% 0%, rgba(15, 61, 76, 0.16), transparent 50%),
+          linear-gradient(180deg, #e6eef2 0%, var(--paper) 30%, #e9eef2 100%);
+      }
+      main {
+        width: min(980px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 2.4rem 0 4rem;
+      }
+      .brand {
+        font-family: Fraunces, Georgia, serif;
+        font-size: clamp(2.2rem, 5.5vw, 3.3rem);
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+        margin: 0 0 0.7rem;
+      }
+      .lede {
+        max-width: 42rem;
+        color: var(--muted);
+        font-size: 1.12rem;
+        margin: 0 0 1.5rem;
+      }
+      .answer {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.45rem 0.75rem;
+        border-radius: 999px;
+        background: rgba(28, 107, 74, 0.12);
+        color: var(--ok);
+        font-weight: 700;
+        font-size: 0.88rem;
+        margin-bottom: 1.25rem;
+      }
+      section {
+        margin: 1.35rem 0;
+        padding: 1.25rem 1.35rem 1.4rem;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        backdrop-filter: blur(6px);
+      }
+      h2 {
+        font-family: Fraunces, Georgia, serif;
+        font-size: 1.4rem;
+        letter-spacing: -0.02em;
+        margin: 0 0 0.75rem;
+      }
+      h3 {
+        font-size: 1.02rem;
+        margin: 1.1rem 0 0.4rem;
+      }
+      p,
+      li {
+        margin: 0.4rem 0;
+      }
+      ul,
+      ol {
+        padding-left: 1.15rem;
+        margin: 0.35rem 0 0;
+      }
+      code,
+      .mono {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        font-size: 0.86em;
+        background: rgba(18, 26, 34, 0.06);
+        padding: 0.08rem 0.32rem;
+        border-radius: 5px;
+      }
+      .grid {
+        display: grid;
+        gap: 0.8rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+      .tile {
+        padding: 0.9rem 1rem;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: linear-gradient(165deg, #f8fafb, #eef3f6);
+      }
+      .tile strong {
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+      .tile span {
+        color: var(--muted);
+        font-size: 0.93rem;
+      }
+      .pipe {
+        display: grid;
+        gap: 0.55rem;
+      }
+      .stage {
+        display: grid;
+        grid-template-columns: 7.2rem 1fr;
+        gap: 0.85rem;
+        padding: 0.75rem 0.85rem;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: #f7fafb;
+      }
+      .tag {
+        font-weight: 700;
+        font-size: 0.78rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--sea);
+        padding-top: 0.15rem;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+      }
+      th,
+      td {
+        text-align: left;
+        vertical-align: top;
+        padding: 0.55rem 0.45rem;
+        border-bottom: 1px solid var(--line);
+      }
+      th {
+        color: var(--muted);
+        font-weight: 600;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .badge {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        padding: 0.22rem 0.48rem;
+        border-radius: 999px;
+      }
+      .ok {
+        background: rgba(28, 107, 74, 0.12);
+        color: var(--ok);
+      }
+      .partial {
+        background: rgba(138, 90, 18, 0.14);
+        color: var(--warn);
+      }
+      .missing {
+        background: rgba(106, 61, 82, 0.12);
+        color: var(--gap);
+      }
+      .band {
+        margin-top: 1.4rem;
+        padding: 1.25rem 1.35rem;
+        border-radius: 18px;
+        color: #e7f1f4;
+        background:
+          linear-gradient(135deg, rgba(184, 90, 43, 0.22), transparent 45%),
+          linear-gradient(160deg, var(--sea), var(--sea-2));
+      }
+      .band h2 {
+        color: #f3f8fa;
+      }
+      .band p,
+      .band li {
+        color: rgba(231, 241, 244, 0.92);
+      }
+      .band code {
+        background: rgba(255, 255, 255, 0.12);
+        color: #f3f8fa;
+      }
+      .sources {
+        font-size: 0.88rem;
+        color: var(--muted);
+      }
+      .sources a {
+        color: var(--sea);
+      }
+      footer {
+        margin-top: 1.4rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      @media (max-width: 700px) {
+        .stage {
+          grid-template-columns: 1fr;
+          gap: 0.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="answer">
+        Oui — Varlock est déjà dans le repo (<code>varlock@1.19.0</code>, script
+        <code>pnpm env:check</code>, schéma <code>.env.schema</code>)
+      </p>
+      <h1 class="brand">Environnements &amp; chemin vers la prod</h1>
+      <p class="lede">
+        Overview pour agency-starter : comment organiser local → staging → production, branches Git,
+        builds natives, OTA, web, migrations Supabase, et données de test — sans mélanger les
+        secrets ni la prod.
+      </p>
+
+      <section>
+        <h2>1. Les 3 environnements (modèle retenu)</h2>
+        <div class="grid">
+          <div class="tile">
+            <strong>Local</strong>
+            <span
+              >Laptop + Docker. Stack Supabase du checkout (<code>pnpm db:start</code>). Worktrees =
+              stacks isolées. Données seed / fixtures.</span
+            >
+          </div>
+          <div class="tile">
+            <strong>Staging</strong>
+            <span
+              >Projet Supabase <em>séparé</em> + web staging + builds mobiles sur channel
+              <code>preview</code> / TestFlight / Play internal. Données synthétiques.</span
+            >
+          </div>
+          <div class="tile">
+            <strong>Production</strong>
+            <span
+              >Projet Supabase prod + web prod + store builds channel <code>production</code>.
+              Secrets GitHub Environments + review obligatoire.</span
+            >
+          </div>
+        </div>
+        <p>
+          Règle d’or :
+          <strong>1 environnement = 1 projet Supabase + 1 set de secrets + 1 URL app</strong>.
+          Jamais la clé service-role ou les données clients dans un build mobile / web public.
+        </p>
+        <p>
+          Varlock sert à <strong>valider</strong> les variables (types, présence) avant run — pas à
+          remplacer les secrets cloud (EAS / GitHub Environments / Varlock remote si on l’active
+          plus tard).
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Comment le code bouge (pipeline)</h2>
+        <div class="pipe">
+          <div class="stage">
+            <div class="tag">Dev</div>
+            <div>
+              Branche courte <code>feat/…</code> → PR → CI (<code>verify</code>, tests). Web preview
+              optionnel. Mobile : Stim local ou EAS Update sur channel de feature si besoin.
+            </div>
+          </div>
+          <div class="stage">
+            <div class="tag">Merge main</div>
+            <div>
+              Trunk toujours “shippable”. Feature flags pour le travail incomplet. Pas de long
+              <code>develop</code> à la GitFlow (sauf si on force un dual-trunk plus tard).
+            </div>
+          </div>
+          <div class="stage">
+            <div class="tag">Staging</div>
+            <div>
+              Migrations <code>supabase db push</code> vers projet staging. Deploy web staging. OTA
+              / build interne → channel <code>preview</code>. Smoke E2E + RLS avec comptes seed.
+            </div>
+          </div>
+          <div class="stage">
+            <div class="tag">Prod</div>
+            <div>
+              Promote après soak staging : migrations prod (review GitHub Environment), web prod,
+              puis soit OTA <code>production</code> (JS only), soit nouveau binaire store (natif
+              changé).
+            </div>
+          </div>
+        </div>
+        <h3>Branches Git (recommandation pour ce monorepo)</h3>
+        <ul>
+          <li>
+            <strong>GitHub Flow</strong> : <code>main</code> + PRs courtes. Adapté monorepo web +
+            mobile (éviter GitFlow lourd).
+          </li>
+          <li>
+            <strong>Stores</strong> : quand on soumet une version, cut optionnelle
+            <code>release/x.y.z</code> depuis <code>main</code> pour stabiliser / hotfixes
+            cherry-pick — pattern M&amp;S / release-train, sans ramener un <code>develop</code>
+            permanent.
+          </li>
+          <li>
+            Tags <code>vX.Y.Z</code> après publication store (ou après deploy web si web-only).
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Deux chemins de release : web vs mobile</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Couche</th>
+              <th>Qu’est-ce qui change</th>
+              <th>Comment shipper</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Web SPA</td>
+              <td>JS/CSS/assets</td>
+              <td>
+                Build Vite → hébergeur (preview PR → staging → prod). Rollback = redeploy commit
+                précédent.
+              </td>
+            </tr>
+            <tr>
+              <td>Mobile JS</td>
+              <td>Bundle JS/assets compatibles</td>
+              <td>
+                <strong>OTA</strong> EAS Update sur channel. Prérequis : même
+                <code>runtimeVersion</code> que le binaire.
+              </td>
+            </tr>
+            <tr>
+              <td>Mobile natif</td>
+              <td>SDK, plugins, entitlements, native deps</td>
+              <td>
+                Nouveau <strong>EAS Build</strong> → TestFlight / Play → review stores. OTA
+                impossible pour ces changements.
+              </td>
+            </tr>
+            <tr>
+              <td>Backend</td>
+              <td>Migrations Drizzle → SQL Supabase, RLS, Storage</td>
+              <td>
+                CI <code>db push</code> staging puis prod. App et schéma versionnés ensemble ;
+                compatibilité forward si possible.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>OTA / channels / bundles (déjà amorcé dans le template)</h3>
+        <ul>
+          <li>
+            <code>eas.json</code> : profiles <code>development</code>, <code>preview</code> (channel
+            preview), <code>production</code> (channel production).
+          </li>
+          <li>
+            <code>runtimeVersion.policy: fingerprint</code> dans <code>app.json</code> — le runtime
+            suit la surface native (sécurité forte). Expo blog 2026 recommande souvent
+            <code>appVersion</code> + fingerprint en <em>gate CI</em> ; les deux sont valides :
+            fingerprint-as-policy = rebuild dès que le native change (plus de builds, moins de
+            mauvaises OTA).
+          </li>
+          <li>
+            Process Expo “simple” : publier sur <code>preview</code> / staging → tester →
+            <code>eas update:republish</code> vers <code>production</code> (même bundle testé).
+            Rollouts % + rollback documentés.
+          </li>
+          <li>
+            Avant OTA : <code>eas fingerprint:compare</code> vs build prod. Si diff → build store,
+            pas update.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>4. Données : staging ≠ copie de prod</h2>
+        <ul>
+          <li>
+            <strong>Par défaut</strong> : seed synthétique (alice/bob locaux, fixtures CI). Pas
+            d’export prod “pour que ce soit réaliste”.
+          </li>
+          <li>
+            Si un jour on a besoin de réalisme : subset <em>anonymisé</em> (PII, tokens, paiements,
+            fichiers privés retirés) + procédure écrite + accès restreint. Jamais dans le repo.
+          </li>
+          <li>
+            Tester RLS avec <strong>deux users seed</strong> via l’API (pas seulement le SQL editor,
+            qui bypass RLS).
+          </li>
+          <li>
+            Auth redirects, OAuth, webhooks, emails : configs <em>propres à l’env</em> (test keys
+            staging).
+          </li>
+          <li>
+            Supabase Branching (preview DB par PR) = option plus tard ; pour démarrer, 2 projets
+            cloud (staging + prod) + local suffisent.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>5. Secrets &amp; config par environnement</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Où</th>
+              <th>Quoi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Local</td>
+              <td>
+                <code>.env*</code> gitignored, générés par <code>pnpm db:start</code> /
+                <code>env:local</code>. Varlock valide le schéma.
+              </td>
+            </tr>
+            <tr>
+              <td>CI</td>
+              <td>
+                GitHub Environments <code>staging</code> / <code>production</code> (reviewers sur
+                prod). Secrets projet Supabase séparés.
+              </td>
+            </tr>
+            <tr>
+              <td>EAS</td>
+              <td>
+                Env vars par profile (<code>development</code> / <code>preview</code> /
+                <code>production</code>) : URL + publishable key du bon projet Supabase.
+              </td>
+            </tr>
+            <tr>
+              <td>Clients</td>
+              <td>
+                Uniquement URL + clé publique (RLS). Service role = serveur / jobs CI seulement.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>6. Matrice “aujourd’hui vs à brancher”</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Sujet</th>
+              <th>État template</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Varlock + <code>.env.schema</code></td>
+              <td><span class="badge ok">Présent</span></td>
+            </tr>
+            <tr>
+              <td>Local Supabase + seeds + pgTAP / intégration</td>
+              <td><span class="badge ok">Présent</span></td>
+            </tr>
+            <tr>
+              <td>EAS profiles / channels / fingerprint</td>
+              <td><span class="badge partial">Config écrite, pas de projet EAS cloud</span></td>
+            </tr>
+            <tr>
+              <td>CI GitHub</td>
+              <td><span class="badge partial">Workflows écrits, remote pas publié</span></td>
+            </tr>
+            <tr>
+              <td>Projets Supabase staging/prod + deploy migrations</td>
+              <td><span class="badge missing">À créer au moment release</span></td>
+            </tr>
+            <tr>
+              <td>Hébergement web staging/prod</td>
+              <td><span class="badge missing">Recette docs, pas branché</span></td>
+            </tr>
+            <tr>
+              <td>OTA réelle + rollouts + rollback runbook</td>
+              <td><span class="badge missing">Après connexion EAS</span></td>
+            </tr>
+            <tr>
+              <td>Feature flags / canary prod</td>
+              <td><span class="badge missing">Optionnel (PostHog etc.)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <div class="band">
+        <h2>Décision pratique pour “nous”</h2>
+        <ol>
+          <li>Rester sur <strong>GitHub Flow</strong> + <code>main</code> shippable.</li>
+          <li>
+            Créer <strong>2 projets Supabase</strong> (staging, prod) quand on publie le remote ;
+            migrations via CI, jamais laptop → prod.
+          </li>
+          <li>
+            Web : preview PR → staging → prod. Mobile : build <code>preview</code> pour tester OTA ;
+            build <code>production</code> store ; OTA seulement si fingerprint OK.
+          </li>
+          <li>Données staging = seed / anonymisé. Jamais prod dump par défaut.</li>
+          <li>
+            Promote OTA avec <code>republish</code> du bundle déjà validé staging ; garder la
+            commande de rollback collée dans le canal release.
+          </li>
+          <li>
+            Varlock reste le garde-fou local/CI des variables ; les secrets live vivent dans GitHub
+            / EAS.
+          </li>
+        </ol>
+        <p style="margin-top: 0.9rem">
+          Ce n’est pas une autorisation de créer des comptes cloud ni de soumettre aux stores —
+          c’est le plan d’organisation une fois qu’on décide de shipper.
+        </p>
+      </div>
+
+      <section class="sources">
+        <h2>Sources (recherche)</h2>
+        <ul>
+          <li>
+            <a href="https://docs.expo.dev/eas-update/deployment/">Expo — Deploy updates</a>,
+            <a href="https://docs.expo.dev/eas-update/runtime-versions/">Runtime versions</a>,
+            <a
+              href="https://expo.dev/blog/5-ota-update-best-practices-every-mobile-team-should-know"
+              >5 OTA best practices (fév. 2026)</a
+            >
+          </li>
+          <li>
+            <a href="https://supabase.com/docs/guides/deployment/managing-environments"
+              >Supabase — Managing environments</a
+            >
+            (+ guides staging séparés / seed synthétique)
+          </li>
+          <li>
+            Trunk / GitHub Flow vs GitFlow : M&amp;S Engineering release branches, analyses 2026 TBD
+            vs GitFlow (web = TBD/GitHub Flow ; mobile store = release cut ponctuelle)
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        Companion de <code>docs/overview.html</code>. Fichier :
+        <code>docs/environments-releases.html</code>.
+      </footer>
+    </main>
+  </body>
+</html>

@@ -18,8 +18,16 @@ import type { Session } from '@supabase/supabase-js';
 import { QueryClientProvider, focusManager, onlineManager } from '@tanstack/react-query';
 import { TamaguiProvider } from '@tamagui/core';
 import { client } from './client';
+import {
+  initNativeIntegrations,
+  syncNativeIntegrationUser,
+  nativeIntegrationFlags,
+} from './integrations';
 import { clearAccountCache, queryClient } from './query';
 import { tamaguiConfig } from './tamagui.config';
+
+initNativeIntegrations();
+void nativeIntegrationFlags;
 
 const i18n = createI18n(getLocales()[0]?.languageCode === 'fr' ? 'fr' : 'en');
 const SessionContext = createContext<{
@@ -97,6 +105,9 @@ export function Providers({ children }: PropsWithChildren) {
       setSession(next);
       setReady(true);
       setError(null);
+      void syncNativeIntegrationUser(
+        next?.user ? { id: next.user.id, email: next.user.email ?? null } : null,
+      );
     };
     const { data } = client.auth.onAuthStateChange((_event, next) => {
       receivedEvent = true;

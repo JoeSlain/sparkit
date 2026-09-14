@@ -6,11 +6,11 @@ Mis à jour le 13 septembre 2026, vers 15 h 20 Europe/Paris. **Ce document ne co
 
 Travail dans `/Users/joe/dev/agency-starter` uniquement.
 
-| Priorité                          | État        | Preuve                                                                                                                                                                      |
-| --------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1 Isolation mobile seul           | **Fait**    | `@tamagui/core` + `@tamagui/stacks` ; peer `react-dom` ignoré. Copie mobile : 9/9 Jest sans `react-dom`.                                                                    |
-| 2 Lockfile + web                  | **Fait**    | `pnpm install --frozen-lockfile` ; web 8 Vitest ; `pnpm verify` OK (rejoué 13/09 ~15 h).                                                                                    |
-| 6 Générateur web/mobile/both      | **Partiel** | Copies QA validées (install + contrôles ciblés). `verify` complet par copie et cycle worktree Git réel restent après premier commit.                                        |
+| Priorité                          | État        | Preuve                                                                                                                                                                     |
+| --------------------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1 Isolation mobile seul           | **Fait**    | `@tamagui/core` + `@tamagui/stacks` ; peer `react-dom` ignoré. Copie mobile : 9/9 Jest sans `react-dom`.                                                                   |
+| 2 Lockfile + web                  | **Fait**    | `pnpm install --frozen-lockfile` ; web 8 Vitest ; `pnpm verify` OK (rejoué 13/09 ~15 h).                                                                                   |
+| 6 Générateur web/mobile/both      | **Partiel** | Copies QA validées (install + contrôles ciblés). `verify` complet par copie et cycle worktree Git réel restent après premier commit.                                       |
 | 3–5 Docker / backend / E2E / Stim | **Fait***   | Docker + backend + Playwright **3/3**. Stim iOS sim + Auth Argent. Stim Android Pixel 9 Pro build/launch OK. *Maestro sign-in encore flaky ; UI Android post-launch = PIN. |
 
 Prochaine action utile : cycle `pnpm worktree` live (HEAD existe). Android AVD : ≥ ~10 Gio libres ; device physique : `EXPO_PUBLIC_SUPABASE_ANDROID_URL=http://<LAN>:54381` (émulateur = `10.0.2.2`). Relancer Docker avec env minimal si `unexpected EOF`.
@@ -57,7 +57,7 @@ Les agents ont travaillé dans des chemins disjoints : backend, frontend web, mo
 
 Les primitives web sont locales ; ce n’est pas une installation complète de shadcn CLI. Il n’y a ni serveur Hono ajouté inutilement, ni synchronisation offline installée.
 
-Versions principales : Node `24.16.0`, pnpm `10.34.5`, Expo `57.0.22`, React `19.2.3`, React Native `0.86.3`, Tamagui `2.7.7`, Lingui `6.7.0`, Supabase JS `2.116.0`, Query `5.102.8`, Valibot `1.5.0`, Router `7.18.3`, Vite `7.3.6`, TypeScript `6.0.3`, Stim `1.2.0`. Vérifier les manifests pour les pins finaux.
+Versions principales : Node `24.16.0`, pnpm `10.34.5`, Expo `57.0.22`, React `19.3.0`, React Native `0.86.3`, Tamagui `2.7.7`, Lingui `6.7.0`, Supabase JS `2.116.0`, Query `5.102.8`, Valibot `1.5.0`, Router `8.3.1`, Vite `8.3.0`, Vitest `5.0.0`, TypeScript `6.0.3`, Stim `1.3.1`, Turbo `2.10.12`. Vérifier les manifests pour les pins finaux.
 
 Expo a nécessité de fixer Reanimated `4.5.1`, Worklets `0.10.1`, Metro config `0.86.3` plutôt que les peers plus récents installés automatiquement. L’app utilise `com.agencystarter.app`, scheme `agencystarter`, runtimeVersion `fingerprint`. Les configs EAS existent, mais aucun projet EAS ni OTA réelle n’est configuré.
 
@@ -65,29 +65,29 @@ Expo a nécessité de fixer Reanimated `4.5.1`, Worklets `0.10.1`, Metro config 
 
 Les résultats suivants ont réellement été obtenus. Les changements de finition intervenus ensuite nécessitent une dernière passe complète.
 
-| Vérification                        | Résultat observé                                                                                                 |
-| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| Installation du monorepo            | Réussie ; lockfile figé OK après reprise (`--frozen-lockfile`)                                                   |
-| `pnpm verify` racine                | Réussi à nouveau le 13/09 ~15 h : format, lint, types, tests et builds JS/Hermes                                      |
-| TypeScript                          | Tous les packages passent ; frontend et mobile ont aussi repassé leurs contrôles ciblés après corrections        |
-| Vitest racine                       | 10 tests : 5 validation + 5 générateur/worktree, réussis                                                         |
-| Web composants                      | 8 tests réussis (dont 2 cas Valibot e-mail/mot de passe)                                                         |
-| Mobile Jest                         | 9 tests / 3 suites réussis dans le monorepo et dans les copies `mobile` / `both`                                 |
-| Migrations                          | Reset local depuis zéro réussi (avant saturation) ; export Drizzle vérifié                                       |
-| Sécurité SQL                        | 22 assertions pgTAP réussies (avant saturation)                                                                  |
-| Intégration backend réelle          | 5 tests Auth/profil/tâches/Storage réussis, avant saturation du disque                                           |
-| Web production                      | Build statique réussi dans `apps/web/build/client` (rejoué à la reprise)                                         |
-| Export natif JS/Hermes              | iOS et Android réussis via `pnpm verify` à la reprise ; ce ne sont pas des binaires natifs                       |
-| Playwright apparence                | 1 scénario réussi (session antérieure) : FR/EN, persistance, tabulation, 390 px                                  |
-| Playwright métier                   | **3/3 OK** à la reprise (apparence + workspace + signup) ; toggle corrigé (optimistic + click async)             |
-| Build/lancement iOS                 | **OK** : `stim ios` → com.agencystarter.app sur BA7F60CF…, Metro 8082 ; Auth confirmée Argent                     |
-| Build/lancement Android             | **OK** device : `stim android --device 56171FDAP000TX` (Pixel 9 Pro) ; APK + bundle Metro OK ; AVD bloqué ENOSPC |
-| Maestro / Argent UI suite           | Auth iOS Argent OK ; Maestro sign-in flaky (focus TextInput / Save Password) ; pas de parcours complet vert      |
-| Projet généré web seul              | Rejoué : install, Lingui, typecheck, 8 tests, build SPA ; aucun Expo/RN                                          |
-| Projet généré mobile seul           | Rejoué : install sans `react-dom`, 9 Jest OK (fix Tamagui lean)                                                  |
-| Projet généré both                  | Rejoué : install, typecheck tous packages, 9 mobile + 8 web                                                      |
-| Worktree                            | Tests unitaires de configuration réussis ; cycle Git + stack Supabase isolée + warm + nettoyage réel non exécuté |
-| React Doctor                        | Scan initial 72/100 ; mobile après correction des contextes 75/100, trois warnings examinés                      |
+| Vérification               | Résultat observé                                                                                                 |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Installation du monorepo   | Réussie ; lockfile figé OK après reprise (`--frozen-lockfile`)                                                   |
+| `pnpm verify` racine       | Réussi à nouveau le 13/09 ~15 h : format, lint, types, tests et builds JS/Hermes                                 |
+| TypeScript                 | Tous les packages passent ; frontend et mobile ont aussi repassé leurs contrôles ciblés après corrections        |
+| Vitest racine              | 10 tests : 5 validation + 5 générateur/worktree, réussis                                                         |
+| Web composants             | 8 tests réussis (dont 2 cas Valibot e-mail/mot de passe)                                                         |
+| Mobile Jest                | 9 tests / 3 suites réussis dans le monorepo et dans les copies `mobile` / `both`                                 |
+| Migrations                 | Reset local depuis zéro réussi (avant saturation) ; export Drizzle vérifié                                       |
+| Sécurité SQL               | 22 assertions pgTAP réussies (avant saturation)                                                                  |
+| Intégration backend réelle | 5 tests Auth/profil/tâches/Storage réussis, avant saturation du disque                                           |
+| Web production             | Build statique réussi dans `apps/web/build/client` (rejoué à la reprise)                                         |
+| Export natif JS/Hermes     | iOS et Android réussis via `pnpm verify` à la reprise ; ce ne sont pas des binaires natifs                       |
+| Playwright apparence       | 1 scénario réussi (session antérieure) : FR/EN, persistance, tabulation, 390 px                                  |
+| Playwright métier          | **3/3 OK** à la reprise (apparence + workspace + signup) ; toggle corrigé (optimistic + click async)             |
+| Build/lancement iOS        | **OK** : `stim ios` → com.agencystarter.app sur BA7F60CF…, Metro 8082 ; Auth confirmée Argent                    |
+| Build/lancement Android    | **OK** device : `stim android --device 56171FDAP000TX` (Pixel 9 Pro) ; APK + bundle Metro OK ; AVD bloqué ENOSPC |
+| Maestro / Argent UI suite  | Auth iOS Argent OK ; Maestro sign-in flaky (focus TextInput / Save Password) ; pas de parcours complet vert      |
+| Projet généré web seul     | Rejoué : install, Lingui, typecheck, 8 tests, build SPA ; aucun Expo/RN                                          |
+| Projet généré mobile seul  | Rejoué : install sans `react-dom`, 9 Jest OK (fix Tamagui lean)                                                  |
+| Projet généré both         | Rejoué : install, typecheck tous packages, 9 mobile + 8 web                                                      |
+| Worktree                   | Tests unitaires de configuration réussis ; cycle Git + stack Supabase isolée + warm + nettoyage réel non exécuté |
+| React Doctor               | Scan initial 72/100 ; mobile après correction des contextes 75/100, trois warnings examinés                      |
 
 Les 5 tests de validation sont exécutés à plusieurs niveaux ; ne pas additionner deux fois les mêmes tests. Certains packages exposent encore des scripts `vitest --passWithNoTests` : leur succès n’est pas une preuve de tests métier supplémentaires.
 

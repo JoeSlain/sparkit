@@ -28,7 +28,7 @@ msgstr "{total, plural, one {# task} other {# tasks}}"
 msgid "A calm home for your tasks, ideas, and everyday progress."
 msgstr "A calm home for your tasks, ideas, and everyday progress."
 
-#: apps/web/app/routes/home.tsx:173
+#: apps/web/app/routes/home.tsx:175
 msgid "A calmer place to begin"
 msgstr "A calmer place to begin"
 
@@ -40,7 +40,7 @@ msgstr "A fresh start"
 msgid "A fresh start."
 msgstr "A fresh start."
 
-#: apps/web/app/routes/home.tsx:109
+#: apps/web/app/routes/home.tsx:111
 msgid "A little focus. A little progress."
 msgstr "A little focus. A little progress."
 
@@ -69,7 +69,7 @@ msgstr "Add a small next step…"
 msgid "Add task"
 msgstr "Add task"
 
-#: apps/web/app/routes/home.tsx:80
+#: apps/web/app/routes/home.tsx:82
 msgid "Add these public values to your local environment file, then restart the development server."
 msgstr "Add these public values to your local environment file, then restart the development server."
 
@@ -82,7 +82,7 @@ msgstr "Add your first task. Small steps make good things happen."
 msgid "Adding…"
 msgstr "Adding…"
 
-#: apps/web/app/routes/home.tsx:64
+#: apps/web/app/routes/home.tsx:66
 msgid "Almost ready"
 msgstr "Almost ready"
 
@@ -103,7 +103,7 @@ msgstr "Back to workspace"
 msgid "Check your email to confirm your account, then sign in."
 msgstr "Check your email to confirm your account, then sign in."
 
-#: apps/web/app/routes/home.tsx:70
+#: apps/web/app/routes/home.tsx:72
 msgid "Connect this app to your Supabase project to enable accounts, profiles, and private tasks."
 msgstr "Connect this app to your Supabase project to enable accounts, profiles, and private tasks."
 
@@ -151,7 +151,7 @@ msgid "Good things start\n"
 msgstr "Good things start\n"
 "with a clear mind."
 
-#: apps/web/app/routes/home.tsx:112
+#: apps/web/app/routes/home.tsx:114
 msgid "Keep the important things close, and take them one at a time."
 msgstr "Keep the important things close, and take them one at a time."
 
@@ -159,7 +159,7 @@ msgstr "Keep the important things close, and take them one at a time."
 msgid "Language"
 msgstr "Language"
 
-#: apps/web/app/routes/home.tsx:153
+#: apps/web/app/routes/home.tsx:155
 msgid "Less noise.<0/>More possibility."
 msgstr "Less noise.<0/>More possibility."
 
@@ -179,7 +179,7 @@ msgstr "Loading tasks"
 msgid "Loading your tasks…"
 msgstr "Loading your tasks…"
 
-#: apps/web/app/routes/home.tsx:169
+#: apps/web/app/routes/home.tsx:171
 msgid "Made for the things that matter."
 msgstr "Made for the things that matter."
 
@@ -215,11 +215,11 @@ msgstr "One step at a time"
 msgid "One thing at a time. You've got this."
 msgstr "One thing at a time. You've got this."
 
-#: apps/web/app/routes/home.tsx:131
+#: apps/web/app/routes/home.tsx:133
 msgid "Only you can access your tasks. A space that's yours, by design."
 msgstr "Only you can access your tasks. A space that's yours, by design."
 
-#: apps/web/app/routes/home.tsx:89
+#: apps/web/app/routes/home.tsx:91
 msgid "Opening your workspace…"
 msgstr "Opening your workspace…"
 
@@ -241,7 +241,7 @@ msgstr "Please wait…"
 msgid "Profile saved."
 msgstr "Profile saved."
 
-#: apps/web/app/routes/home.tsx:97
+#: apps/web/app/routes/home.tsx:99
 msgid "Reload"
 msgstr "Reload"
 
@@ -266,16 +266,16 @@ msgid "Sign in"
 msgstr "Sign in"
 
 #: apps/mobile/src/dashboard.tsx:219
-#: apps/web/app/routes/home.tsx:55
+#: apps/web/app/routes/home.tsx:57
 msgid "Sign out"
 msgstr "Sign out"
 
 #: apps/mobile/src/dashboard.tsx:219
-#: apps/web/app/routes/home.tsx:55
+#: apps/web/app/routes/home.tsx:57
 msgid "Signing out…"
 msgstr "Signing out…"
 
-#: apps/web/app/routes/home.tsx:40
+#: apps/web/app/routes/home.tsx:42
 msgid "Skip to content"
 msgstr "Skip to content"
 
@@ -329,7 +329,7 @@ msgstr "We couldn't load your profile."
 msgid "We couldn't load your tasks."
 msgstr "We couldn't load your tasks."
 
-#: apps/web/app/routes/home.tsx:94
+#: apps/web/app/routes/home.tsx:96
 msgid "We couldn't restore your session. Please reload to try again."
 msgstr "We couldn't restore your session. Please reload to try again."
 
@@ -342,7 +342,7 @@ msgid "We couldn't sign you in. Check your email and password, then try again."
 msgstr "We couldn't sign you in. Check your email and password, then try again."
 
 #: apps/mobile/src/dashboard.tsx:212
-#: apps/web/app/routes/home.tsx:121
+#: apps/web/app/routes/home.tsx:123
 msgid "We couldn't sign you out. Please try again."
 msgstr "We couldn't sign you out. Please try again."
 
@@ -374,7 +374,7 @@ msgstr "Your name must be between 1 and 80 characters."
 msgid "Your previous session couldn't be restored. Please sign in again."
 msgstr "Your previous session couldn't be restored. Please sign in again."
 
-#: apps/web/app/routes/home.tsx:106
+#: apps/web/app/routes/home.tsx:108
 msgid "Your private workspace"
 msgstr "Your private workspace"
 
@@ -408,6 +408,6 @@ msgstr "Your tasks"
 msgid "Your tasks are private. Make room for what matters."
 msgstr "Your tasks are private. Make room for what matters."
 
-#: apps/web/app/routes/home.tsx:67
+#: apps/web/app/routes/home.tsx:69
 msgid "Your workspace is taking shape."
 msgstr "Your workspace is taking shape."

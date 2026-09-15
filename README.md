@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/assets/sparkit-mascot.png" alt="Sparkit mascot" width="280" />
+</p>
+
 # Sparkit
 
 Un starter TypeScript pour créer une application iOS/Android, une application web, ou les deux. Le projet est indépendant de l’App Factory : il peut être copié, versionné et maintenu séparément.

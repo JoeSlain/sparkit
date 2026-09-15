@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/sparkit-mascot.png" alt="Sparkit mascot" width="280" />
+  <img src="docs/assets/banner.png" alt="Sparkit mascot" width="280" />
 </p>
 
 # Sparkit

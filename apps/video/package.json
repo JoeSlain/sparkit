@@ -1,0 +1,28 @@
+{
+  "name": "@sparkit/video",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "remotion studio",
+    "studio": "remotion studio",
+    "render": "remotion render SparkitPromo out/sparkit-promo.mp4",
+    "still": "remotion still SparkitPromo out/sparkit-promo.png",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.525",
+    "@remotion/google-fonts": "4.0.525",
+    "@remotion/player": "4.0.525",
+    "@remotion/transitions": "4.0.525",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "remotion": "4.0.525",
+    "simple-icons": "16.31.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.2.3",
+    "typescript": "6.0.3"
+  }
+}

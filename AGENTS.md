@@ -4,8 +4,9 @@ Independent open-source starter. Work only in this repository and its explicitly
 
 ## Architecture
 
-- Expo is native iOS/Android only. No Expo Web, react-native-web, or universal routing.
-- Web uses React + Vite + React Router. Native uses Expo Router + Tamagui.
+- Expo is native iOS/Android only. No Expo Web or universal routing.
+- Web and native both use Tamagui 2 (`@tamagui/core` + `@tamagui/stacks`). Web may use `react-native-web` only as Tamagui's renderer, never Expo Web.
+- Web uses React + Vite + React Router. Native uses Expo Router.
 - Lingui is the only translation system; English source and French catalogs.
 - pnpm workspaces with pinned versions; root owns installation and the lockfile.
 - Supabase is real data/auth. Never replace acceptance tests with a mocked successful backend.

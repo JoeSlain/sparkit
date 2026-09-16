@@ -1,6 +1,6 @@
 # Contribuer
 
-Merci de contribuer à ce starter. Les changements doivent rester utilisables dans des projets indépendants : éviter les chemins machine, comptes fournisseur, secrets ou conventions propres à l’App Factory.
+Merci de contribuer à ce starter. Les changements doivent rester utilisables dans des projets indépendants : éviter les chemins machine, comptes fournisseur, secrets ou conventions locales non documentées.
 
 Les contributions et discussions peuvent être en français ou en anglais. Le code utilise des noms explicites en anglais ; les messages de l’interface passent par Lingui et disposent de catalogues anglais/français.
 
@@ -31,7 +31,7 @@ Les commits suivent une forme conventionnelle : `feat:`, `fix:`, `docs:`, `test:
 
 ## Frontières à conserver
 
-- Le natif est Expo/React Native ; le web utilise React Router/Vite. Ne pas ajouter Expo Web implicitement.
+- Le natif est Expo/React Native ; le web utilise React Router/Vite. Les deux utilisent Tamagui 2. `react-native-web` est autorisé uniquement comme rendu Tamagui côté web ; ne pas ajouter Expo Web ni de routage universel.
 - `@sparkit/db` reste réservé au serveur et aux outils. Le client importe `@sparkit/supabase`.
 - Supabase CLI est le seul exécuteur de migrations. Les migrations appliquées sont immuables.
 - Les clés publiques peuvent être distribuées ; les clés administratives et secrets restent côté serveur/outils.

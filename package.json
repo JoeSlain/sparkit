@@ -7,6 +7,8 @@
   "scripts": {
     "dev:web": "pnpm --filter @sparkit/web dev",
     "dev:mobile": "pnpm --filter @sparkit/mobile dev",
+    "dev:video": "pnpm --filter @sparkit/video studio",
+    "render:video": "pnpm --filter @sparkit/video render",
     "build": "turbo run build --concurrency=2",
     "typecheck": "turbo run typecheck --concurrency=2",
     "lint": "oxlint .",

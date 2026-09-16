@@ -2,10 +2,11 @@ import { authInputSchema } from '@sparkit/validation';
 import { safeParse } from 'valibot';
 import { useState, type FormEvent } from 'react';
 import { Trans, useLingui } from '@lingui/react/macro';
+import { Text } from '@tamagui/core';
+import { XStack, YStack } from '@tamagui/stacks';
+import { colors } from '@sparkit/tokens';
 import type { AppClient } from '@sparkit/supabase';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Notice } from './ui/notice';
+import { Button, Card, Eyebrow, Field, Input, Notice } from './ui';
 
 export function AuthForm({ client }: { client: AppClient }) {
   const { t } = useLingui();
@@ -46,102 +47,100 @@ export function AuthForm({ client }: { client: AppClient }) {
     }
   }
   return (
-    <section className="auth-card" aria-labelledby="auth-title">
-      <div className="eyebrow">
-        <span className="status-dot" />
-        <Trans>A little space for progress</Trans>
-      </div>
-      <h1 id="auth-title">
-        {mode === 'signin' ? (
-          <Trans>Welcome back.</Trans>
-        ) : (
-          <Trans>Make room for what matters.</Trans>
-        )}
-      </h1>
-      <p className="muted auth-description">
-        {mode === 'signin' ? (
-          <Trans>Your ideas, your tasks, your next step. Pick up where you left off.</Trans>
-        ) : (
-          <Trans>
-            Create your private workspace and turn a little intention into everyday progress.
-          </Trans>
-        )}
-      </p>
-      <form onSubmit={submit} className="form-stack" aria-busy={pending} noValidate>
-        <div className="field">
-          <label htmlFor="email">
-            <Trans>Email address</Trans>
-          </label>
-          <Input
-            id="email"
-            data-testid="email-input"
-            type="email"
-            autoComplete="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="you@example.com"
-            disabled={pending}
-          />
-        </div>
-        <div className="field">
-          <label htmlFor="password">
-            <Trans>Password</Trans>
-          </label>
-          <Input
-            id="password"
-            data-testid="password-input"
-            type="password"
-            autoComplete={mode === 'signup' ? 'new-password' : 'current-password'}
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            aria-describedby="password-hint"
-            disabled={pending}
-          />
-          <span className="field-hint" id="password-hint">
-            <Trans>At least 8 characters.</Trans>
-          </span>
-        </div>
-        {error && <Notice error>{error}</Notice>}
-        {message && <Notice>{message}</Notice>}
-        <Button
-          type="submit"
-          data-testid={mode === 'signin' ? 'sign-in-button' : 'sign-up-button'}
-          disabled={pending}
-          className="auth-submit"
-        >
-          {pending ? (
-            <Trans>One moment…</Trans>
-          ) : mode === 'signin' ? (
-            <Trans>Sign in</Trans>
-          ) : (
-            <Trans>Create account</Trans>
-          )}
-          <span aria-hidden="true">↗</span>
-        </Button>
-      </form>
-      <div className="auth-switch">
-        <span>
+    <section aria-labelledby="auth-title" style={{ width: '100%', maxWidth: 480 }}>
+      <Card>
+        <Eyebrow>
+          <Trans>A little space for progress</Trans>
+        </Eyebrow>
+        <Text id="auth-title" fontSize={32} fontWeight="600" letterSpacing={-1} color={colors.ink}>
           {mode === 'signin' ? (
-            <Trans>New around here?</Trans>
+            <Trans>Welcome back.</Trans>
           ) : (
-            <Trans>Already have an account?</Trans>
+            <Trans>Make room for what matters.</Trans>
           )}
-        </span>
-        <Button
-          variant="ghost"
-          data-testid={mode === 'signin' ? 'sign-up-button' : 'sign-in-button'}
-          disabled={pending}
-          onClick={() => {
-            setMode(mode === 'signin' ? 'signup' : 'signin');
-            setError('');
-            setMessage('');
-          }}
-        >
-          {mode === 'signin' ? <Trans>Create an account</Trans> : <Trans>Sign in</Trans>}
-        </Button>
-      </div>
+        </Text>
+        <Text fontSize={15} lineHeight={24} color={colors.muted}>
+          {mode === 'signin' ? (
+            <Trans>Your ideas, your tasks, your next step. Pick up where you left off.</Trans>
+          ) : (
+            <Trans>
+              Create your private workspace and turn a little intention into everyday progress.
+            </Trans>
+          )}
+        </Text>
+        <form onSubmit={submit} aria-busy={pending} noValidate>
+          <YStack gap={16}>
+            <Field label={<Trans>Email address</Trans>} htmlFor="email">
+              <Input
+                id="email"
+                data-testid="email-input"
+                type="email"
+                autoComplete="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@example.com"
+                disabled={pending}
+              />
+            </Field>
+            <Field
+              label={<Trans>Password</Trans>}
+              htmlFor="password"
+              hint={<Trans>At least 8 characters.</Trans>}
+            >
+              <Input
+                id="password"
+                data-testid="password-input"
+                type="password"
+                autoComplete={mode === 'signup' ? 'new-password' : 'current-password'}
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                aria-describedby="password-hint"
+                disabled={pending}
+              />
+            </Field>
+            {error ? <Notice error>{error}</Notice> : null}
+            {message ? <Notice>{message}</Notice> : null}
+            <Button
+              type="submit"
+              data-testid={mode === 'signin' ? 'sign-in-button' : 'sign-up-button'}
+              disabled={pending}
+              style={{ width: '100%' }}
+            >
+              {pending ? (
+                <Trans>One moment…</Trans>
+              ) : mode === 'signin' ? (
+                <Trans>Sign in</Trans>
+              ) : (
+                <Trans>Create account</Trans>
+              )}
+              <span aria-hidden="true">↗</span>
+            </Button>
+          </YStack>
+        </form>
+        <XStack gap={8} alignItems="center" flexWrap="wrap">
+          <Text fontSize={14} color={colors.muted}>
+            {mode === 'signin' ? (
+              <Trans>New around here?</Trans>
+            ) : (
+              <Trans>Already have an account?</Trans>
+            )}
+          </Text>
+          <Button
+            variant="ghost"
+            data-testid={mode === 'signin' ? 'sign-up-button' : 'sign-in-button'}
+            disabled={pending}
+            onClick={() => {
+              setMode(mode === 'signin' ? 'signup' : 'signin');
+              setError('');
+              setMessage('');
+            }}
+          >
+            {mode === 'signin' ? <Trans>Create an account</Trans> : <Trans>Sign in</Trans>}
+          </Button>
+        </XStack>
+      </Card>
     </section>
   );
 }

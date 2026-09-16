@@ -1,6 +1,6 @@
 # Web workspace
 
-React Router Framework SPA (`ssr: false`) with Vite, React, Tailwind and local shadcn-style primitives. Native code and Expo are intentionally absent. The demo uses real Supabase auth and private task/profile APIs; there is no mock data mode.
+React Router Framework SPA (`ssr: false`) with Vite, React, and Tamagui 2. Import from `@tamagui/core` and `@tamagui/stacks` only; runtime styles, same lean approach as mobile. `react-native-web` is used only as Tamagui's web renderer. Native Expo code is intentionally absent. The demo uses real Supabase auth and private task/profile APIs; there is no mock data mode.
 
 From the repository root, copy `apps/web/.env.example` to `apps/web/.env.local`, fill in the local project's publishable key, then run `pnpm dev:web`. Missing configuration renders a setup screen. A public Supabase key may enter the browser; a service-role key must never use a `VITE_` variable.
 

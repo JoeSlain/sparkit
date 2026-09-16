@@ -2,14 +2,19 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { I18nProvider } from '@lingui/react';
 import { setupI18n } from '@lingui/core';
+import { TamaguiProvider } from '@tamagui/core';
 import { describe, expect, it, vi } from 'vitest';
 import type { AppClient } from '@sparkit/supabase';
 import { AuthForm } from '../app/components/auth-form';
+import { tamaguiConfig } from '../app/tamagui.config';
+
 function show(client: AppClient) {
   return render(
-    <I18nProvider i18n={setupI18n({ locale: 'en', messages: {} })}>
-      <AuthForm client={client} />
-    </I18nProvider>,
+    <TamaguiProvider config={tamaguiConfig} defaultTheme="light">
+      <I18nProvider i18n={setupI18n({ locale: 'en', messages: {} })}>
+        <AuthForm client={client} />
+      </I18nProvider>
+    </TamaguiProvider>,
   );
 }
 describe('authentication form', () => {

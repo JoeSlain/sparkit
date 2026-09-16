@@ -15,7 +15,7 @@ Namespace: `@sparkit/*`. pnpm workspace dependencies: `workspace:*`. Source expo
 
 Authentication using real Supabase email/password (local confirmation disabled). Signed-in dashboard with private tasks, profile display name, locale switcher, sign out. No fake data mode. Friendly unconfigured environment screen instead of crashing. TanStack Query handles remote data and clears at logout/account change. Queries keyed by user id. Loading, error, empty, validation and pending states accessible.
 
-Native: Expo Router, Tamagui 2, secure auth storage, AppState auth refresh/focus and network adapter; no web export. Web: React Router Framework mode SPA (ssr:false), Vite, Tailwind/shadcn-style primitives in `apps/web/app/components/ui`, components.json.
+Native: Expo Router, Tamagui 2, secure auth storage, AppState auth refresh/focus and network adapter; no web export. Web: React Router Framework mode SPA (ssr:false), Vite, Tamagui 2 (`@tamagui/core` + `@tamagui/stacks`) with `react-native-web` as the Tamagui renderer only. Shared raw values live in `@sparkit/tokens`.
 
 Stable test IDs on both UIs: `email-input`, `password-input`, `sign-in-button`, `sign-up-button`, `task-input`, `add-task-button`, `task-row`, `task-toggle`, `task-delete`, `profile-name-input`, `save-profile-button`, `locale-en`, `locale-fr`, `sign-out-button`. Native use testID; web data-testid.
 

@@ -55,7 +55,7 @@ Les agents ont travaillé dans des chemins disjoints : backend, frontend web, mo
 | `.github/workflows/ci.yml` | Jobs de vérification et backend/web écrits ; non exécutés sur GitHub                                                                               |
 | Documentation              | README, contribution, sécurité, workflow quotidien, backend, profils optionnels, contrats                                                          |
 
-Les primitives web sont locales ; ce n’est pas une installation complète de shadcn CLI. Il n’y a ni serveur Hono ajouté inutilement, ni synchronisation offline installée.
+Les primitives web utilisent Tamagui 2 (`@tamagui/core` + `@tamagui/stacks`) ; Tailwind/shadcn ne sont plus utilisés. Il n’y a ni serveur Hono ajouté inutilement, ni synchronisation offline installée.
 
 Versions principales : Node `24.16.0`, pnpm `10.34.5`, Expo `57.0.22`, React `19.3.0`, React Native `0.86.3`, Tamagui `2.7.7`, Lingui `6.7.0`, Supabase JS `2.116.0`, Query `5.102.8`, Valibot `1.5.0`, Router `8.3.1`, Vite `8.3.0`, Vitest `5.0.0`, TypeScript `6.0.3`, Stim `1.3.1`, Turbo `2.10.12`. Vérifier les manifests pour les pins finaux.
 

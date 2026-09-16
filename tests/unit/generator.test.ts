@@ -28,6 +28,7 @@ function fixture() {
     }),
     'apps/web/package.json': '{"name":"@sparkit/web"}',
     'apps/mobile/app.json': '{"bundleIdentifier":"com.sparkit.app"}',
+    'apps/video/package.json': '{"name":"@sparkit/video"}',
     '.env.local': 'PRIVATE=secret',
     '.env.example': 'PUBLIC=placeholder',
     '.local/secret.json': 'secret',
@@ -63,6 +64,7 @@ test('web-only output has no mobile tree, secrets, history, cache or stale lock'
   createProject({ ...f, targets: 'web' });
   for (const name of [
     'apps/mobile',
+    'apps/video',
     '.env.local',
     '.local',
     '.git',

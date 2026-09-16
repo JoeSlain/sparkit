@@ -1,5 +1,6 @@
 import { createI18n, activateLocale, type Locale } from '@sparkit/i18n';
 import { I18nProvider } from '@lingui/react';
+import { TamaguiProvider } from '@tamagui/core';
 import { QueryClientProvider } from '@tanstack/react-query';
 import {
   createContext,
@@ -10,6 +11,7 @@ import {
   useSyncExternalStore,
   type ReactNode,
 } from 'react';
+import { tamaguiConfig } from '../tamagui.config';
 import { createQueryClient } from './query';
 
 let volatileLocale: Locale | undefined;
@@ -55,10 +57,12 @@ export function Providers({ children }: { children: ReactNode }) {
     document.documentElement.lang = locale;
   }, [i18n, locale]);
   return (
-    <I18nProvider i18n={i18n}>
-      <LocaleContext.Provider value={localeContext}>
-        <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-      </LocaleContext.Provider>
-    </I18nProvider>
+    <TamaguiProvider config={tamaguiConfig} defaultTheme="light">
+      <I18nProvider i18n={i18n}>
+        <LocaleContext.Provider value={localeContext}>
+          <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+        </LocaleContext.Provider>
+      </I18nProvider>
+    </TamaguiProvider>
   );
 }

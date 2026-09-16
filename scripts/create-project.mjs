@@ -71,6 +71,7 @@ export function createProject({ destination, name, targets = 'both', source = te
       )
         return false;
       if (parts[0] === 'apps' && parts[1] === 'web' && targets === 'mobile') return false;
+      if (parts[0] === 'apps' && parts[1] === 'video') return false;
       if (
         parts[0] === 'packages' &&
         parts[1] === 'i18n' &&

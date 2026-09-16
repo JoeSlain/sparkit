@@ -7,6 +7,7 @@ node_modules/
 .turbo/
 dist/
 build/
+apps/video/out/
 coverage/
 playwright-report/
 test-results/
@@ -23,3 +24,4 @@ packages/i18n/locales/*/messages.ts
 
 # Local crash dumps
 erl_crash.dump
+.github/context-mode/

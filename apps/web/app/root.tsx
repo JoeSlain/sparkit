@@ -1,7 +1,11 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
 import { Trans } from '@lingui/react/macro';
+import { Text } from '@tamagui/core';
+import { YStack } from '@tamagui/stacks';
+import { colors } from '@sparkit/tokens';
 import type { ReactNode } from 'react';
 import { Providers } from './lib/providers';
+import { Button } from './components/ui';
 import './styles.css';
 
 export function Layout({ children }: { children: ReactNode }) {
@@ -10,7 +14,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#f7f6f3" />
+        <meta name="theme-color" content="#f7f7f4" />
         <Meta />
         <Links />
       </head>
@@ -32,16 +36,18 @@ export default function App() {
 export function ErrorBoundary() {
   return (
     <Providers>
-      <main className="fallback">
-        <h1>
-          <Trans>Something went wrong</Trans>
-        </h1>
-        <p>
-          <Trans>Please reload the page to try again.</Trans>
-        </p>
-        <a className="button button-primary" href="/">
-          <Trans>Back to workspace</Trans>
-        </a>
+      <main>
+        <YStack maxWidth={560} marginHorizontal="auto" padding={32} gap={16}>
+          <Text fontSize={28} fontWeight="600" color={colors.ink}>
+            <Trans>Something went wrong</Trans>
+          </Text>
+          <Text color={colors.muted}>
+            <Trans>Please reload the page to try again.</Trans>
+          </Text>
+          <Button onClick={() => window.location.assign('/')}>
+            <Trans>Back to workspace</Trans>
+          </Button>
+        </YStack>
       </main>
     </Providers>
   );

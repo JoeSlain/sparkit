@@ -4,12 +4,18 @@
     "@supabase/supabase-js",
     "@lingui/babel-plugin-lingui-macro",
     "expo-updates",
-    "expo-system-ui"
+    "expo-system-ui",
+    "react-native-web",
+    "@types/react-native-web"
   ],
   "ignoreBinaries": ["supabase"],
   "workspaces": {
     ".": {
       "entry": ["scripts/*.mjs", "supabase/*.mjs", "lingui.config.ts"]
+    },
+    "apps/video": {
+      "entry": ["src/index.ts", "remotion.config.ts"],
+      "project": ["src/**/*.{ts,tsx}", "remotion.config.ts"]
     }
   }
 }

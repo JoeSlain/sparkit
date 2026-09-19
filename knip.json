@@ -15,7 +15,7 @@
     },
     "apps/video": {
       "entry": ["src/index.ts", "remotion.config.ts"],
-      "project": ["src/**/*.{ts,tsx}", "remotion.config.ts"]
+      "project": ["src/**/*.{ts,tsx}"]
     }
   }
 }

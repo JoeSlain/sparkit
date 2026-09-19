@@ -198,9 +198,6 @@ importers:
       '@remotion/google-fonts':
         specifier: 4.0.525
         version: 4.0.525(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
-      '@remotion/player':
-        specifier: 4.0.525
-        version: 4.0.525(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       '@remotion/transitions':
         specifier: 4.0.525
         version: 4.0.525(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -353,7 +350,7 @@ importers:
     dependencies:
       '@lingui/core':
         specifier: 6.7.0
-        version: 6.7.0(@babel/core@7.29.7)(@babel/types@7.29.8)
+        version: 6.7.0(@babel/core@7.29.0)(@babel/types@7.29.8)
     devDependencies:
       '@lingui/cli':
         specifier: 6.7.0
@@ -9493,14 +9490,6 @@ snapshots:
       '@babel/core': 7.29.0
       '@babel/types': 7.29.8
 
-  '@lingui/babel-plugin-lingui-macro@6.7.0(@babel/core@7.29.7)(@babel/types@7.29.8)':
-    dependencies:
-      '@lingui/conf': 6.7.0
-      '@lingui/message-utils': 6.7.0
-    optionalDependencies:
-      '@babel/core': 7.29.7
-      '@babel/types': 7.29.8
-
   '@lingui/cli@6.7.0(esbuild@0.28.2)(rolldown@1.2.8)':
     dependencies:
       '@babel/core': 7.29.0
@@ -9541,14 +9530,6 @@ snapshots:
   '@lingui/core@6.7.0(@babel/core@7.29.0)(@babel/types@7.29.8)':
     dependencies:
       '@lingui/babel-plugin-lingui-macro': 6.7.0(@babel/core@7.29.0)(@babel/types@7.29.8)
-      '@lingui/message-utils': 6.7.0
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/types'
-
-  '@lingui/core@6.7.0(@babel/core@7.29.7)(@babel/types@7.29.8)':
-    dependencies:
-      '@lingui/babel-plugin-lingui-macro': 6.7.0(@babel/core@7.29.7)(@babel/types@7.29.8)
       '@lingui/message-utils': 6.7.0
     transitivePeerDependencies:
       - '@babel/core'

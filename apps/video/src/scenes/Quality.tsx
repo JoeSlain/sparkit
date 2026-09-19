@@ -103,10 +103,7 @@ export function QualityScene() {
                 width: node.icon === icons.typescript ? 110 : 92,
                 height: node.icon === icons.typescript ? 110 : 92,
                 borderRadius: 28,
-                background:
-                  node.icon === icons.typescript
-                    ? brand.white
-                    : 'rgba(0,0,0,0.28)',
+                background: node.icon === icons.typescript ? brand.white : 'rgba(0,0,0,0.28)',
                 border: '2px solid rgba(255,255,255,0.35)',
                 display: 'flex',
                 alignItems: 'center',

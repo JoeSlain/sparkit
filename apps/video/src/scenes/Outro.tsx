@@ -47,10 +47,7 @@ export function OutroScene() {
             scale: interpolate(smash, [0, 1], [0.7, 1]),
           }}
         >
-          <Img
-            src={staticFile('banner.png')}
-            style={{ width: 640, borderRadius: 28 }}
-          />
+          <Img src={staticFile('banner.png')} style={{ width: 640, borderRadius: 28 }} />
         </div>
         <KineticWord text="CLONE." delay={12} size={96} />
         <KineticWord text="CONFIGURE." delay={22} size={96} />

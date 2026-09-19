@@ -51,8 +51,20 @@ export function ProofScene() {
         <TypeLine text="$ pnpm verify" start={6} cps={22} color="#7CFFB2" />
         <div style={{ height: 14 }} />
         <TypeLine text="✓ lingui compile" start={28} cps={40} color="#A8FFCF" cursor={false} />
-        <TypeLine text="✓ oxlint · oxfmt · tsc" start={38} cps={40} color="#A8FFCF" cursor={false} />
-        <TypeLine text="✓ vitest · package builds" start={48} cps={40} color="#A8FFCF" cursor={false} />
+        <TypeLine
+          text="✓ oxlint · oxfmt · tsc"
+          start={38}
+          cps={40}
+          color="#A8FFCF"
+          cursor={false}
+        />
+        <TypeLine
+          text="✓ vitest · package builds"
+          start={48}
+          cps={40}
+          color="#A8FFCF"
+          cursor={false}
+        />
         <TypeLine
           text="→ next: integration · db:test · e2e"
           start={62}
@@ -73,7 +85,7 @@ export function ProofScene() {
           width: 620,
         }}
       >
-        {checks.map((item, index) => {
+        {checks.map((item) => {
           const p = spring({
             frame: frame - item.at,
             fps,

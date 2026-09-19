@@ -6,11 +6,11 @@ Ce starter fournit des protections et tests de référence ; il ne constitue pas
 
 Ne pas publier de secret, donnée utilisateur ou preuve directement exploitable dans une issue publique.
 
-Si le dépôt qui distribue ce starter propose **Security → Report a vulnerability** sur GitHub, utiliser ce canal privé. Sinon, contacter le mainteneur par un canal privé déjà identifié dans ce dépôt. Aucun email de sécurité fictif n’est fourni ici. Le propriétaire d’un projet dérivé doit publier son contact et sa politique de traitement avant une ouverture au public.
+Utiliser **Security → Report a vulnerability** sur ce dépôt GitHub une fois le signalement privé activé (Settings → Code security). En attendant, contacter le mainteneur par un canal privé déjà identifié. Ne pas ouvrir d’issue publique pour une vulnérabilité. Aucun email de sécurité fictif n’est fourni ici. Le propriétaire d’un projet dérivé doit publier son contact et sa politique de traitement avant une ouverture au public.
 
 Préciser la version ou le commit affecté, les conditions nécessaires, les étapes de reproduction, l’impact et une suggestion de correction si disponible. Utiliser des comptes et données de test. Aucune durée garantie de réponse ou liste de versions maintenues n’est annoncée sans équipe et procédure correspondantes.
 
-**English:** Please disclose vulnerabilities privately through the repository's enabled security-reporting channel or an established private maintainer contact. Do not post credentials, personal data or immediately exploitable details in public issues. Derived projects must publish their own security contact and support policy.
+**English:** Please disclose vulnerabilities privately via GitHub **Security → Report a vulnerability** when private reporting is enabled on this repository, or through an established private maintainer contact. Do not post credentials, personal data or immediately exploitable details in public issues. Derived projects must publish their own security contact and support policy.
 
 ## Secrets et données
 

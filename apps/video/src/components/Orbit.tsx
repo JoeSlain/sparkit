@@ -109,7 +109,7 @@ export function IconRain({ icons, count = 18 }: IconRainProps) {
     <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden' }}>
       {Array.from({ length: count }, (_, index) => {
         const icon = icons[index % icons.length]!;
-        const x = ((index * 97) % 100);
+        const x = (index * 97) % 100;
         const speed = 2.2 + (index % 5) * 0.35;
         const y = ((frame * speed + index * 70) % 130) - 20;
         const rot = frame * (0.8 + (index % 4) * 0.3) * (index % 2 === 0 ? 1 : -1);

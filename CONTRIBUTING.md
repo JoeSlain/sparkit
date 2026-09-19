@@ -2,7 +2,7 @@
 
 Merci de contribuer à ce starter. Les changements doivent rester utilisables dans des projets indépendants : éviter les chemins machine, comptes fournisseur, secrets ou conventions locales non documentées.
 
-Les contributions et discussions peuvent être en français ou en anglais. Le code utilise des noms explicites en anglais ; les messages de l’interface passent par Lingui et disposent de catalogues anglais/français.
+Les contributions et discussions peuvent être en français ou en anglais. Le code utilise des noms explicites en anglais ; les messages de l’interface passent par Lingui et disposent de catalogues anglais/français. La participation est régie par le [code de conduite](CODE_OF_CONDUCT.md).
 
 ## Préparer l’environnement
 

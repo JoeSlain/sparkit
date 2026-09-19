@@ -87,8 +87,8 @@ export default function Home() {
               </Text>
               <Text color={colors.muted} lineHeight={24}>
                 <Trans>
-                  Connect this app to your Supabase project to enable accounts, profiles, and private
-                  tasks.
+                  Connect this app to your Supabase project to enable accounts, profiles, and
+                  private tasks.
                 </Trans>
               </Text>
               <YStack gap={8}>

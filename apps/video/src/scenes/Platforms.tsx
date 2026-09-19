@@ -149,7 +149,14 @@ export function PlatformsScene() {
         <KineticWord text="+ WEB" delay={8} size={86} />
       </div>
       <PopIn delay={18} style={{ position: 'absolute', top: 280, left: 96, maxWidth: 520 }}>
-        <div style={{ fontSize: 34, fontWeight: 600, lineHeight: 1.35, color: 'rgba(255,255,255,0.82)' }}>
+        <div
+          style={{
+            fontSize: 34,
+            fontWeight: 600,
+            lineHeight: 1.35,
+            color: 'rgba(255,255,255,0.82)',
+          }}
+        >
           Expo Router on device. React Router + Vite in the browser. Tamagui 2 on both. No Expo Web.
         </div>
       </PopIn>
@@ -171,7 +178,9 @@ export function PlatformsScene() {
             <BrandIcon icon={icons.android} size={40} />
           </div>
           <BrandIcon icon={icons.stim} size={42} />
-          <div style={{ fontFamily: fonts.display, fontWeight: 700, fontSize: 22 }}>iOS · Android</div>
+          <div style={{ fontFamily: fonts.display, fontWeight: 700, fontSize: 22 }}>
+            iOS · Android
+          </div>
         </DeviceFrame>
 
         <div

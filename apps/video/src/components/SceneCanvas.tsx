@@ -22,10 +22,30 @@ type SceneCanvasProps = {
 };
 
 const tones = {
-  ink: { base: brand.ink, a: 'rgba(11,108,255,0.45)', b: 'rgba(124,92,255,0.28)', c: 'rgba(255,107,74,0.18)' },
-  blue: { base: brand.blue, a: 'rgba(126,196,255,0.5)', b: 'rgba(4,46,122,0.55)', c: 'rgba(255,255,255,0.2)' },
-  cream: { base: brand.cream, a: 'rgba(11,108,255,0.16)', b: 'rgba(31,169,122,0.12)', c: 'rgba(245,185,66,0.18)' },
-  terminal: { base: '#06110C', a: 'rgba(31,169,122,0.35)', b: 'rgba(11,108,255,0.2)', c: 'rgba(245,185,66,0.12)' },
+  ink: {
+    base: brand.ink,
+    a: 'rgba(11,108,255,0.45)',
+    b: 'rgba(124,92,255,0.28)',
+    c: 'rgba(255,107,74,0.18)',
+  },
+  blue: {
+    base: brand.blue,
+    a: 'rgba(126,196,255,0.5)',
+    b: 'rgba(4,46,122,0.55)',
+    c: 'rgba(255,255,255,0.2)',
+  },
+  cream: {
+    base: brand.cream,
+    a: 'rgba(11,108,255,0.16)',
+    b: 'rgba(31,169,122,0.12)',
+    c: 'rgba(245,185,66,0.18)',
+  },
+  terminal: {
+    base: '#06110C',
+    a: 'rgba(31,169,122,0.35)',
+    b: 'rgba(11,108,255,0.2)',
+    c: 'rgba(245,185,66,0.12)',
+  },
 } as const;
 
 export function SceneCanvas({ children, tone = 'ink' }: SceneCanvasProps) {

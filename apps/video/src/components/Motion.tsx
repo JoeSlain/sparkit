@@ -31,7 +31,8 @@ export function PopIn({ children, delay = 0, from = 'up', style }: PopInProps) {
       style={{
         opacity: p,
         translate: `${interpolate(p, [0, 1], [map.x, 0])}px ${interpolate(p, [0, 1], [map.y, 0])}px`,
-        scale: from === 'scale' ? interpolate(p, [0, 1], [0.55, 1]) : interpolate(p, [0, 1], [0.88, 1]),
+        scale:
+          from === 'scale' ? interpolate(p, [0, 1], [0.55, 1]) : interpolate(p, [0, 1], [0.88, 1]),
         ...style,
       }}
     >

@@ -16,11 +16,11 @@ msgstr ""
 msgid "{complete} of {total} done"
 msgstr "{complete} sur {total} terminées"
 
-#: apps/web/app/components/tasks.tsx:201
+#: apps/web/app/components/tasks.tsx:224
 msgid "{completed} of {total} completed"
 msgstr "{completed} sur {total} terminées"
 
-#: apps/web/app/components/tasks.tsx:132
+#: apps/web/app/components/tasks.tsx:152
 msgid "{total, plural, one {# task} other {# tasks}}"
 msgstr "{total, plural, one {# tâche} other {# tâches}}"
 
@@ -28,7 +28,7 @@ msgstr "{total, plural, one {# tâche} other {# tâches}}"
 msgid "A calm home for your tasks, ideas, and everyday progress."
 msgstr "Un espace serein pour vos tâches, vos idées et vos progrès quotidiens."
 
-#: apps/web/app/routes/home.tsx:175
+#: apps/web/app/routes/home.tsx:220
 msgid "A calmer place to begin"
 msgstr "Un espace serein pour commencer"
 
@@ -36,11 +36,11 @@ msgstr "Un espace serein pour commencer"
 msgid "A fresh start"
 msgstr "Un nouveau départ"
 
-#: apps/web/app/components/tasks.tsx:186
+#: apps/web/app/components/tasks.tsx:209
 msgid "A fresh start."
 msgstr "Un nouveau départ."
 
-#: apps/web/app/routes/home.tsx:111
+#: apps/web/app/routes/home.tsx:135
 msgid "A little focus. A little progress."
 msgstr "Un peu de concentration. Un peu de progrès."
 
@@ -52,7 +52,7 @@ msgstr "UN PEU DE PROGRÈS, CHAQUE JOUR"
 msgid "A little setup first"
 msgstr "Quelques réglages pour commencer"
 
-#: apps/web/app/components/auth-form.tsx:52
+#: apps/web/app/components/auth-form.tsx:53
 msgid "A little space for progress"
 msgstr "Un espace pour avancer"
 
@@ -65,64 +65,64 @@ msgid "Add a small next step…"
 msgstr "Ajoutez une prochaine étape…"
 
 #: apps/mobile/src/dashboard.tsx:129
-#: apps/web/app/components/tasks.tsx:153
+#: apps/web/app/components/tasks.tsx:176
 msgid "Add task"
 msgstr "Ajouter une tâche"
 
-#: apps/web/app/routes/home.tsx:82
+#: apps/web/app/routes/home.tsx:103
 msgid "Add these public values to your local environment file, then restart the development server."
 msgstr "Ajoutez ces valeurs publiques à votre fichier d’environnement local, puis redémarrez le serveur de développement."
 
-#: apps/web/app/components/tasks.tsx:189
+#: apps/web/app/components/tasks.tsx:212
 msgid "Add your first task. Small steps make good things happen."
 msgstr "Ajoutez votre première tâche. Chaque petit pas compte."
 
 #: apps/mobile/src/dashboard.tsx:129
-#: apps/web/app/components/tasks.tsx:153
+#: apps/web/app/components/tasks.tsx:176
 msgid "Adding…"
 msgstr "Ajout…"
 
-#: apps/web/app/routes/home.tsx:66
+#: apps/web/app/routes/home.tsx:83
 msgid "Almost ready"
 msgstr "Presque prêt"
 
-#: apps/web/app/components/auth-form.tsx:129
+#: apps/web/app/components/auth-form.tsx:127
 msgid "Already have an account?"
 msgstr "Vous avez déjà un compte ?"
 
-#: apps/web/app/components/auth-form.tsx:103
+#: apps/web/app/components/auth-form.tsx:89
 msgid "At least 8 characters."
 msgstr "Au moins 8 caractères."
 
-#: apps/web/app/root.tsx:43
+#: apps/web/app/root.tsx:48
 msgid "Back to workspace"
 msgstr "Retour à votre espace"
 
 #: apps/mobile/src/auth-form.tsx:80
-#: apps/web/app/components/auth-form.tsx:37
+#: apps/web/app/components/auth-form.tsx:38
 msgid "Check your email to confirm your account, then sign in."
 msgstr "Confirmez votre compte depuis l’e-mail reçu, puis connectez-vous."
 
-#: apps/web/app/routes/home.tsx:72
+#: apps/web/app/routes/home.tsx:89
 msgid "Connect this app to your Supabase project to enable accounts, profiles, and private tasks."
 msgstr "Connectez cette application à votre projet Supabase pour activer les comptes, les profils et les tâches privées."
 
-#: apps/web/app/components/auth-form.tsx:119
+#: apps/web/app/components/auth-form.tsx:116
 msgid "Create account"
 msgstr "Créer un compte"
 
 #: apps/mobile/src/auth-form.tsx:98
-#: apps/web/app/components/auth-form.tsx:142
+#: apps/web/app/components/auth-form.tsx:140
 msgid "Create an account"
 msgstr "Créer un compte"
 
-#: apps/web/app/components/auth-form.tsx:65
+#: apps/web/app/components/auth-form.tsx:66
 msgid "Create your private workspace and turn a little intention into everyday progress."
 msgstr "Créez votre espace privé pour concrétiser vos idées au quotidien."
 
 #. placeholder {0}: task.title
 #: apps/mobile/src/dashboard.tsx:289
-#: apps/web/app/components/tasks.tsx:70
+#: apps/web/app/components/tasks.tsx:79
 msgid "Delete task: {0}"
 msgstr "Supprimer la tâche : {0}"
 
@@ -137,7 +137,7 @@ msgid "Email address"
 msgstr "Adresse e-mail"
 
 #: apps/mobile/src/auth-form.tsx:28
-#: apps/web/app/components/auth-form.tsx:25
+#: apps/web/app/components/auth-form.tsx:26
 msgid "Enter a valid email and a password with at least 8 characters."
 msgstr "Saisissez une adresse e-mail valide et un mot de passe d’au moins 8 caractères."
 
@@ -151,23 +151,29 @@ msgid "Good things start\n"
 msgstr "Tout commence\n"
 "avec les idées claires."
 
-#: apps/web/app/routes/home.tsx:114
+#: apps/web/app/routes/home.tsx:138
 msgid "Keep the important things close, and take them one at a time."
 msgstr "Gardez l’essentiel à portée de main et avancez pas à pas."
 
-#: apps/web/app/components/locale-switcher.tsx:7
+#: apps/web/app/components/locale-switcher.tsx:12
 msgid "Language"
 msgstr "Langue"
 
+#: apps/web/app/routes/home.tsx:191
+msgid "Less noise.\n"
+"More possibility."
+msgstr "Moins de bruit.\n"
+"Plus de possibilités."
+
 #: apps/web/app/routes/home.tsx:155
-msgid "Less noise.<0/>More possibility."
-msgstr "Moins de bruit.<0/>Plus de possibilités."
+#~ msgid "Less noise.<0/>More possibility."
+#~ msgstr "Moins de bruit.<0/>Plus de possibilités."
 
 #: apps/mobile/src/dashboard.tsx:197
 msgid "Loading profile"
 msgstr "Chargement du profil"
 
-#: apps/web/app/components/profile.tsx:110
+#: apps/web/app/components/profile.tsx:123
 msgid "Loading profile…"
 msgstr "Chargement du profil…"
 
@@ -175,15 +181,15 @@ msgstr "Chargement du profil…"
 msgid "Loading tasks"
 msgstr "Chargement des tâches"
 
-#: apps/web/app/components/tasks.tsx:169
+#: apps/web/app/components/tasks.tsx:192
 msgid "Loading your tasks…"
 msgstr "Chargement de vos tâches…"
 
-#: apps/web/app/routes/home.tsx:171
+#: apps/web/app/routes/home.tsx:217
 msgid "Made for the things that matter."
 msgstr "Pour ce qui compte vraiment."
 
-#: apps/web/app/components/auth-form.tsx:58
+#: apps/web/app/components/auth-form.tsx:59
 msgid "Make room for what matters."
 msgstr "Faites place à l’essentiel."
 
@@ -191,11 +197,11 @@ msgstr "Faites place à l’essentiel."
 msgid "Make space for today."
 msgstr "Faites place à cette journée."
 
-#: apps/web/app/components/auth-form.tsx:127
+#: apps/web/app/components/auth-form.tsx:125
 msgid "New around here?"
 msgstr "Pas encore de compte ?"
 
-#: apps/web/app/components/tasks.tsx:138
+#: apps/web/app/components/tasks.tsx:159
 msgid "New task"
 msgstr "Nouvelle tâche"
 
@@ -203,11 +209,11 @@ msgstr "Nouvelle tâche"
 msgid "Nothing here yet. Add your first task above."
 msgstr "Rien pour le moment. Ajoutez votre première tâche ci-dessus."
 
-#: apps/web/app/components/auth-form.tsx:115
+#: apps/web/app/components/auth-form.tsx:112
 msgid "One moment…"
 msgstr "Un instant…"
 
-#: apps/web/app/components/tasks.tsx:124
+#: apps/web/app/components/tasks.tsx:136
 msgid "One step at a time"
 msgstr "Un pas à la fois"
 
@@ -215,20 +221,20 @@ msgstr "Un pas à la fois"
 msgid "One thing at a time. You've got this."
 msgstr "Une chose à la fois. Vous pouvez y arriver."
 
-#: apps/web/app/routes/home.tsx:133
+#: apps/web/app/routes/home.tsx:166
 msgid "Only you can access your tasks. A space that's yours, by design."
 msgstr "Vous seul pouvez accéder à vos tâches. Un espace conçu pour vous."
 
-#: apps/web/app/routes/home.tsx:91
+#: apps/web/app/routes/home.tsx:111
 msgid "Opening your workspace…"
 msgstr "Ouverture de votre espace…"
 
 #: apps/mobile/src/auth-form.tsx:64
-#: apps/web/app/components/auth-form.tsx:89
+#: apps/web/app/components/auth-form.tsx:87
 msgid "Password"
 msgstr "Mot de passe"
 
-#: apps/web/app/root.tsx:40
+#: apps/web/app/root.tsx:45
 msgid "Please reload the page to try again."
 msgstr "Rechargez la page pour réessayer."
 
@@ -237,11 +243,11 @@ msgid "Please wait…"
 msgstr "Veuillez patienter…"
 
 #: apps/mobile/src/dashboard.tsx:343
-#: apps/web/app/components/profile.tsx:75
+#: apps/web/app/components/profile.tsx:74
 msgid "Profile saved."
 msgstr "Profil enregistré."
 
-#: apps/web/app/routes/home.tsx:99
+#: apps/web/app/routes/home.tsx:119
 msgid "Reload"
 msgstr "Recharger"
 
@@ -250,45 +256,45 @@ msgid "Restoring your session"
 msgstr "Restauration de votre session"
 
 #: apps/mobile/src/dashboard.tsx:345
-#: apps/web/app/components/profile.tsx:84
+#: apps/web/app/components/profile.tsx:83
 msgid "Save profile"
 msgstr "Enregistrer le profil"
 
 #: apps/mobile/src/dashboard.tsx:345
-#: apps/web/app/components/profile.tsx:84
+#: apps/web/app/components/profile.tsx:83
 msgid "Saving…"
 msgstr "Enregistrement…"
 
 #: apps/mobile/src/auth-form.tsx:89
-#: apps/web/app/components/auth-form.tsx:117
-#: apps/web/app/components/auth-form.tsx:142
+#: apps/web/app/components/auth-form.tsx:114
+#: apps/web/app/components/auth-form.tsx:140
 msgid "Sign in"
 msgstr "Se connecter"
 
 #: apps/mobile/src/dashboard.tsx:219
-#: apps/web/app/routes/home.tsx:57
+#: apps/web/app/routes/home.tsx:60
 msgid "Sign out"
 msgstr "Se déconnecter"
 
 #: apps/mobile/src/dashboard.tsx:219
-#: apps/web/app/routes/home.tsx:57
+#: apps/web/app/routes/home.tsx:60
 msgid "Signing out…"
 msgstr "Déconnexion…"
 
-#: apps/web/app/routes/home.tsx:42
+#: apps/web/app/routes/home.tsx:44
 msgid "Skip to content"
 msgstr "Aller au contenu"
 
-#: apps/web/app/root.tsx:37
+#: apps/web/app/root.tsx:42
 msgid "Something went wrong"
 msgstr "Une erreur est survenue"
 
-#: apps/web/app/components/tasks.tsx:205
+#: apps/web/app/components/tasks.tsx:228
 msgid "Task completion"
 msgstr "Avancement des tâches"
 
 #: apps/mobile/src/dashboard.tsx:132
-#: apps/web/app/components/tasks.tsx:86
+#: apps/web/app/components/tasks.tsx:96
 msgid "That change didn't save. Please try again."
 msgstr "Cette modification n’a pas été enregistrée. Réessayez."
 
@@ -298,8 +304,8 @@ msgstr "Cet espace n’est pas encore connecté. Ajoutez l’URL Supabase et la 
 
 #: apps/mobile/src/dashboard.tsx:144
 #: apps/mobile/src/dashboard.tsx:206
-#: apps/web/app/components/profile.tsx:118
-#: apps/web/app/components/tasks.tsx:177
+#: apps/web/app/components/profile.tsx:131
+#: apps/web/app/components/tasks.tsx:200
 msgid "Try again"
 msgstr "Réessayer"
 
@@ -311,7 +317,7 @@ msgstr "Utilisez un nom de 1 à 80 caractères."
 #~ msgid "Use a password with at least 8 characters."
 #~ msgstr "Utilisez un mot de passe d’au moins 8 caractères."
 
-#: apps/web/app/components/auth-form.tsx:42
+#: apps/web/app/components/auth-form.tsx:43
 msgid "We couldn't create your account. Check your details and try again."
 msgstr "Impossible de créer votre compte. Vérifiez vos informations et réessayez."
 
@@ -320,20 +326,20 @@ msgid "We couldn't create your account. Please try again."
 msgstr "Impossible de créer votre compte. Réessayez."
 
 #: apps/mobile/src/dashboard.tsx:200
-#: apps/web/app/components/profile.tsx:115
+#: apps/web/app/components/profile.tsx:128
 msgid "We couldn't load your profile."
 msgstr "Impossible de charger votre profil."
 
 #: apps/mobile/src/dashboard.tsx:138
-#: apps/web/app/components/tasks.tsx:174
+#: apps/web/app/components/tasks.tsx:197
 msgid "We couldn't load your tasks."
 msgstr "Impossible de charger vos tâches."
 
-#: apps/web/app/routes/home.tsx:96
+#: apps/web/app/routes/home.tsx:116
 msgid "We couldn't restore your session. Please reload to try again."
 msgstr "Impossible de restaurer votre session. Rechargez la page pour réessayer."
 
-#: apps/web/app/components/auth-form.tsx:41
+#: apps/web/app/components/auth-form.tsx:42
 msgid "We couldn't sign you in. Check your email and password and try again."
 msgstr "Connexion impossible. Vérifiez votre adresse e-mail et votre mot de passe, puis réessayez."
 
@@ -342,15 +348,15 @@ msgid "We couldn't sign you in. Check your email and password, then try again."
 msgstr "Connexion impossible. Vérifiez votre adresse e-mail et votre mot de passe, puis réessayez."
 
 #: apps/mobile/src/dashboard.tsx:212
-#: apps/web/app/routes/home.tsx:123
+#: apps/web/app/routes/home.tsx:147
 msgid "We couldn't sign you out. Please try again."
 msgstr "Déconnexion impossible. Réessayez."
 
-#: apps/web/app/components/auth-form.tsx:56
+#: apps/web/app/components/auth-form.tsx:57
 msgid "Welcome back."
 msgstr "Heureux de vous retrouver."
 
-#: apps/web/app/components/tasks.tsx:146
+#: apps/web/app/components/tasks.tsx:168
 msgid "What would you like to get done?"
 msgstr "Que souhaitez-vous accomplir ?"
 
@@ -358,15 +364,15 @@ msgstr "Que souhaitez-vous accomplir ?"
 msgid "What's on your mind?"
 msgstr "Qu’avez-vous en tête ?"
 
-#: apps/web/app/components/tasks.tsx:111
+#: apps/web/app/components/tasks.tsx:122
 msgid "Write a task between 1 and 160 characters."
 msgstr "Saisissez une tâche de 1 à 160 caractères."
 
-#: apps/web/app/components/auth-form.tsx:63
+#: apps/web/app/components/auth-form.tsx:64
 msgid "Your ideas, your tasks, your next step. Pick up where you left off."
 msgstr "Vos idées, vos tâches, votre prochaine étape. Reprenez là où vous en étiez."
 
-#: apps/web/app/components/profile.tsx:36
+#: apps/web/app/components/profile.tsx:37
 msgid "Your name must be between 1 and 80 characters."
 msgstr "Votre nom doit contenir de 1 à 80 caractères."
 
@@ -374,16 +380,16 @@ msgstr "Votre nom doit contenir de 1 à 80 caractères."
 msgid "Your previous session couldn't be restored. Please sign in again."
 msgstr "Votre session précédente n’a pas pu être restaurée. Reconnectez-vous."
 
-#: apps/web/app/routes/home.tsx:108
+#: apps/web/app/routes/home.tsx:132
 msgid "Your private workspace"
 msgstr "Votre espace privé"
 
 #: apps/mobile/src/dashboard.tsx:192
-#: apps/web/app/components/profile.tsx:105
+#: apps/web/app/components/profile.tsx:118
 msgid "Your profile"
 msgstr "Votre profil"
 
-#: apps/web/app/components/profile.tsx:70
+#: apps/web/app/components/profile.tsx:69
 msgid "Your profile couldn't be saved. Please try again."
 msgstr "Impossible d’enregistrer votre profil. Réessayez."
 
@@ -395,12 +401,12 @@ msgstr "Votre profil n’a pas été enregistré. Réessayez."
 msgid "YOUR SPACE TO FOCUS"
 msgstr "VOTRE ESPACE POUR VOUS CONCENTRER"
 
-#: apps/web/app/components/tasks.tsx:163
+#: apps/web/app/components/tasks.tsx:187
 msgid "Your task couldn't be added. Please try again."
 msgstr "Impossible d’ajouter votre tâche. Réessayez."
 
 #: apps/mobile/src/dashboard.tsx:108
-#: apps/web/app/components/tasks.tsx:127
+#: apps/web/app/components/tasks.tsx:139
 msgid "Your tasks"
 msgstr "Vos tâches"
 
@@ -408,6 +414,6 @@ msgstr "Vos tâches"
 msgid "Your tasks are private. Make room for what matters."
 msgstr "Vos tâches sont privées. Faites place à l’essentiel."
 
-#: apps/web/app/routes/home.tsx:69
+#: apps/web/app/routes/home.tsx:86
 msgid "Your workspace is taking shape."
 msgstr "Votre espace prend forme."

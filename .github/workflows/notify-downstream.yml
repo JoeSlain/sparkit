@@ -1,0 +1,22 @@
+# Tells private downstream editions built on Sparkit to merge the latest main right away.
+# Inert unless the DOWNSTREAM_REPO and DOWNSTREAM_TOKEN secrets are configured on JoeSlain/sparkit.
+name: Notify downstream
+on:
+  push:
+    branches: [main]
+permissions: {}
+jobs:
+  dispatch:
+    if: github.repository == 'JoeSlain/sparkit'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - env:
+          GH_TOKEN: ${{ secrets.DOWNSTREAM_TOKEN }}
+          DOWNSTREAM_REPO: ${{ secrets.DOWNSTREAM_REPO }}
+        run: |
+          if [ -z "$GH_TOKEN" ] || [ -z "$DOWNSTREAM_REPO" ]; then
+            echo "Downstream sync is not configured; skipping."
+            exit 0
+          fi
+          gh api --method POST "repos/$DOWNSTREAM_REPO/dispatches" -f event_type=upstream-updated

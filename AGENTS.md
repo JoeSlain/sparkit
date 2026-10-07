@@ -14,6 +14,13 @@ Independent open-source starter. Work only in this repository and its explicitly
 - Public clients use RLS. Privileged credentials are server/test-only and must never enter bundles.
 - See `docs/CONTRACTS.md` before changing shared APIs.
 
+## Agent docs
+
+If `docs/agents/EDITION.md` exists, read it first: this checkout is a downstream edition with its own rules.
+Then read `docs/agents/README.md`: `STATUS.md` and `KNOWN_ISSUES.md` for your area, `DECISIONS.md` before reversing a choice.
+Before handing back, update the status rows and known issues you touched, with command, date and commit as evidence.
+Log misses in the agent context to `.local/agents/failures.md`. Machine paths, device IDs and raw logs stay under `.local/`.
+
 ## Collaboration
 
 Parallel agents own disjoint paths. Do not edit another agent's files without coordination.

@@ -1,6 +1,6 @@
 # Implementation plan
 
-Status: core implementation exists; local validation largely closed. Playwright E2E 3/3; Stim iOS sim + Android physical device launch proven; Maestro full sign-in still flaky. First local commit + real worktree cycle remain. Read [HANDOFF.md](HANDOFF.md). Working name `sparkit`; MIT license.
+Status: core implementation exists. Current state per area is in [agents/STATUS.md](agents/STATUS.md); open failures are in [agents/KNOWN_ISSUES.md](agents/KNOWN_ISSUES.md). MIT license.
 
 ## Deliverable
 

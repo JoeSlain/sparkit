@@ -40,6 +40,10 @@ function fixture() {
       'project_id = "sparkit"\n[api]\nport = 54381\n[auth]\nsite_url = "http://localhost:5173"\n',
     'supabase/migrations/initial.sql': 'select 1;',
     'supabase/seed.sql': 'select 1;',
+    'docs/agents/EDITION.md': '# Private edition\n',
+    'docs/agents/STATUS.md': '# Status\n\n| Area | State |\n| --- | --- |\n| Web E2E | ✅ |\n',
+    'docs/agents/KNOWN_ISSUES.md':
+      '# Known issues\n\n```md\n### KI-NNN\n```\n\n### KI-001\n\nTemplate failure\n',
   };
   for (const [name, text] of Object.entries(files)) {
     const path = resolve(source, name);
@@ -88,6 +92,17 @@ test('mobile-only output renames app identifiers and prunes web', () => {
   expect(existsSync(resolve(f.destination, 'apps/web'))).toBe(false);
   expect(readFileSync(resolve(f.destination, 'apps/mobile/app.json'), 'utf8')).toContain(
     'com.newapp.app',
+  );
+});
+test('generated projects start with empty agent status and known issues', () => {
+  const f = fixture();
+  createProject(f);
+  expect(existsSync(resolve(f.destination, 'docs/agents/EDITION.md'))).toBe(false);
+  expect(readFileSync(resolve(f.destination, 'docs/agents/STATUS.md'), 'utf8')).toBe(
+    '# Status\n\n| Area | State |\n| --- | --- |\n',
+  );
+  expect(readFileSync(resolve(f.destination, 'docs/agents/KNOWN_ISSUES.md'), 'utf8')).toBe(
+    '# Known issues\n\n```md\n### KI-NNN\n```\n',
   );
 });
 test('never overwrites existing destinations or copies recursively through symlinks', () => {

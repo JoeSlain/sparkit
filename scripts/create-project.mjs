@@ -142,6 +142,22 @@ export function createProject({ destination, name, targets = 'both', source = te
       writeFileSync(catalog, blocks.join('\n\n') + '\n');
     }
   }
+  // Agent state describes the template, not the new project: keep the formats, drop the entries.
+  rmSync(resolve(output, 'docs/agents/EDITION.md'), { force: true });
+  const status = resolve(output, 'docs/agents/STATUS.md');
+  if (existsSync(status)) {
+    const lines = readFileSync(status, 'utf8').split('\n');
+    const header = lines.findIndex((line) => line.startsWith('| ---'));
+    if (header >= 0) writeFileSync(status, `${lines.slice(0, header + 1).join('\n')}\n`);
+  }
+  const issues = resolve(output, 'docs/agents/KNOWN_ISSUES.md');
+  if (existsSync(issues))
+    writeFileSync(
+      issues,
+      `${readFileSync(issues, 'utf8')
+        .split(/\n### KI-\d/)[0]
+        .trimEnd()}\n`,
+    );
   const manifestPath = resolve(output, 'package.json');
   const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
   manifest.name = name;

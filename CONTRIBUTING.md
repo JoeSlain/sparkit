@@ -69,6 +69,8 @@ Plusieurs agents peuvent travailler sur des chemins distincts, mais un seul resp
 
 Stim doit être exécuté depuis l’application. Lire son guide installé avant de modifier une procédure native. Les worktrees ne doivent pas recevoir les secrets du checkout source lors d’un `warm` ; conserver la politique d’exclusion du dépôt.
 
+L’état par zone, les problèmes connus et les décisions sont dans [docs/agents/](docs/agents/README.md). Mettre à jour la ligne de statut concernée avec la commande, la date et le commit qui la prouvent.
+
 Ne pas publier une application, créer des ressources payantes, soumettre aux stores ou partager des données utilisateur dans le cadre d’une simple vérification locale. Les releases ont leur propre décision et configuration.
 
 ## Signaler un problème
